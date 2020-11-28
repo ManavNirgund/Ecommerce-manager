@@ -1,3 +1,3 @@
 {
-    "files": ["mainwindow.ui","cuslogin.ui","cussignup.ui","sellogin.ui","main.py"]
+    "files": ["cussignup.ui","wrongcred.ui","main.py","selsignup.ui","login.ui","mainwindow.ui"]
 }
