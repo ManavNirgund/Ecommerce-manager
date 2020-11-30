@@ -92,7 +92,7 @@ def create_default_tables(conn):
                                         FOREIGN KEY (product_id) REFERENCES products (product_id)); """)
 
     create_queries.append(""" CREATE TABLE IF NOT EXISTS wishlist (
-                                        id integer PRIMARY KEY,
+                                        wishlist_id integer PRIMARY KEY,
                                         customer_id integer,
                                         product_id integer,
                                         FOREIGN KEY (customer_id) REFERENCES customer (customer_id),

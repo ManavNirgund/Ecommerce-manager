@@ -339,3 +339,129 @@ def cart_update(conn, cart_info):
         print(e)
         return -1
 
+
+def wishlist_insert(conn, wishlist_info):
+    """
+    Inserts a row in 'wishlist' table with the values passed in 'wishlist_info'
+    Parameters:
+        conn: Connection object
+        wishlist_info: a tuple of values to insert
+    """
+    try:
+        sql = " INSERT into wishlist(wishlist_id, customer_id, product_id)" \
+              " VALUES (?, ?, ?) "
+        cur = conn.cursor()
+        cur.execute(sql, wishlist_info)
+        conn.commit()
+        return cur.lastrowid
+    except Error as e:
+        print(e)
+        return -1
+
+
+def wishlist_update(conn, wishlist_info):
+    """
+    Updates a row in 'wishlist' table with the values passed in 'wishlist_info'
+    Parameters:
+        conn: Connection object
+        wishlist_info: a tuple of values to update
+    """
+    try:
+        sql = " UPDATE wishlist SET" \
+              " customer_id = ? ," \
+              " product_id = ? " \
+              " WHERE wishlist_id = ?"
+        cur = conn.cursor()
+        cur.execute(sql, wishlist_info)
+        conn.commit()
+        return cur.lastrowid
+    except Error as e:
+        print(e)
+        return -1
+
+
+def order_details_insert(conn, order_details_info):
+    """
+    Inserts a row in 'order_details' table with the values passed in 'order_details_info'
+    Parameters:
+        conn: Connection object
+        order_details_info: a tuple of values to insert
+    """
+    try:
+        sql = " INSERT into order_details(order_id, product_id, product_name, product_qty, product_cost, total_cost)" \
+              " VALUES (?, ?, ?, ?, ?, ?) "
+        cur = conn.cursor()
+        cur.execute(sql, order_details_info)
+        conn.commit()
+        return cur.lastrowid
+    except Error as e:
+        print(e)
+        return -1
+
+
+def order_details_update(conn, order_details_info):
+    """
+    Updates a row in 'order_details' table with the values passed in 'order_details_info'
+    Parameters:
+        conn: Connection object
+        order_details_info: a tuple of values to update
+    """
+    try:
+        sql = " UPDATE order_details SET" \
+              " product_id = ? ," \
+              " product_name = ? ," \
+              " product_qty = ? ," \
+              " product_cost = ? ," \
+              " total_cost = ? " \
+              " WHERE order_id = ?"
+        cur = conn.cursor()
+        cur.execute(sql, order_details_info)
+        conn.commit()
+        return cur.lastrowid
+    except Error as e:
+        print(e)
+        return -1
+
+
+def orders_insert(conn, orders_info):
+    """
+    Inserts a row in 'orders' table with the values passed in 'orders_info'
+    Parameters:
+        conn: Connection object
+        orders_info: a tuple of values to insert
+    """
+    try:
+        sql = " INSERT into orders(id, order_id, customer_id, total_cost, address_id, payment_id, order_date)" \
+              " VALUES (?, ?, ?, ?, ?, ?) "
+        cur = conn.cursor()
+        cur.execute(sql, orders_info)
+        conn.commit()
+        return cur.lastrowid
+    except Error as e:
+        print(e)
+        return -1
+
+
+def orders_update(conn, orders_info):
+    """
+    Updates a row in 'orders' table with the values passed in 'orders_info'
+    Parameters:
+        conn: Connection object
+        orders_info: a tuple of values to update
+    """
+    try:
+        sql = " UPDATE orders SET" \
+              " customer_id = ? ," \
+              " total_cost = ? ," \
+              " address_id = ? ," \
+              " payment_id = ? ," \
+              " order_date = ? " \
+              " WHERE order_id = ?"
+        cur = conn.cursor()
+        cur.execute(sql, orders_info)
+        conn.commit()
+        return cur.lastrowid
+    except Error as e:
+        print(e)
+        return -1
+
