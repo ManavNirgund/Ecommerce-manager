@@ -10,8 +10,28 @@
     <height>770</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>971</width>
+    <height>770</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>971</width>
+    <height>770</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>Customer Signup</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normalon>Resources/Icons/Logo.png</normalon>
+   </iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background: #444</string>
   </property>
   <widget class="QFrame" name="frm_Signup">
    <property name="geometry">
@@ -46,66 +66,69 @@ font-size: 50px;
 font-weight: bold;</string>
     </property>
     <property name="text">
-     <string>depot</string>
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>Resources/Icons/depot.png</pixmap>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QLabel" name="lbl_Username">
-    <property name="geometry">
-     <rect>
-      <x>220</x>
-      <y>270</y>
-      <width>121</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Username</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
     </property>
    </widget>
    <widget class="QLineEdit" name="txt_Pass">
     <property name="geometry">
      <rect>
       <x>380</x>
-      <y>390</y>
-      <width>201</width>
+      <y>400</y>
+      <width>241</width>
       <height>31</height>
      </rect>
     </property>
-   </widget>
-   <widget class="QLineEdit" name="txt_Username">
-    <property name="geometry">
-     <rect>
-      <x>380</x>
-      <y>270</y>
-      <width>201</width>
-      <height>31</height>
-     </rect>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid rgb(243, 76, 83);
+border-radius: 15px;
+padding-left: 10px;
+padding-bottom: 1px;
+color: white;
+font-size: 20px;</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="txt_SelEmail">
     <property name="geometry">
      <rect>
       <x>380</x>
-      <y>330</y>
-      <width>201</width>
+      <y>320</y>
+      <width>241</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid rgb(243, 76, 83);
+border-radius: 15px;
+padding-left: 10px;
+padding-bottom: 1px;
+color: white;
+font-size: 20px;</string>
     </property>
    </widget>
    <widget class="QLabel" name="lbl_Pass">
     <property name="geometry">
      <rect>
       <x>230</x>
-      <y>390</y>
+      <y>400</y>
       <width>111</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: white;
+font-size: 20px;</string>
     </property>
     <property name="text">
      <string>Password</string>
@@ -118,10 +141,14 @@ font-weight: bold;</string>
     <property name="geometry">
      <rect>
       <x>230</x>
-      <y>330</y>
+      <y>320</y>
       <width>111</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: white;
+font-size: 20px;</string>
     </property>
     <property name="text">
      <string>E-Mail</string>
@@ -134,10 +161,14 @@ font-weight: bold;</string>
     <property name="geometry">
      <rect>
       <x>220</x>
-      <y>210</y>
+      <y>240</y>
       <width>121</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: white;
+font-size: 20px;</string>
     </property>
     <property name="text">
      <string>Full Name</string>
@@ -150,10 +181,21 @@ font-weight: bold;</string>
     <property name="geometry">
      <rect>
       <x>380</x>
-      <y>210</y>
-      <width>201</width>
+      <y>240</y>
+      <width>241</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::StrongFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid rgb(243, 76, 83);
+border-radius: 15px;
+padding-left: 10px;
+padding-bottom: 1px;
+color: white;
+font-size: 20px;</string>
     </property>
     <property name="text">
      <string/>
@@ -163,20 +205,35 @@ font-weight: bold;</string>
     <property name="geometry">
      <rect>
       <x>380</x>
-      <y>450</y>
-      <width>201</width>
+      <y>480</y>
+      <width>241</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid rgb(243, 76, 83);
+border-radius: 15px;
+padding-left: 10px;
+padding-bottom: 1px;
+color: white;
+font-size: 20px;</string>
     </property>
    </widget>
    <widget class="QLabel" name="lbl_PassConfirm">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>450</y>
-      <width>111</width>
+      <x>180</x>
+      <y>480</y>
+      <width>161</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: white;
+font-size: 20px;</string>
     </property>
     <property name="text">
      <string>Confirm Password</string>
@@ -195,7 +252,10 @@ font-weight: bold;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font-size: 20px;</string>
+     <string notr="true">border: none;
+border-radius: 15px;
+background: rgb(243, 76, 83);
+font-size: 20px;</string>
     </property>
     <property name="text">
      <string>Signup</string>
@@ -212,7 +272,8 @@ font-weight: bold;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">border: none;
-background: #444;
+border-radius: 15px;
+background: #222;
 color: white;
 font-size: 20px;
 </string>
@@ -224,5 +285,54 @@ font-size: 20px;
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>txt_SelEmail</sender>
+   <signal>returnPressed()</signal>
+   <receiver>txt_Pass</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>553</x>
+     <y>362</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>565</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>txt_Pass</sender>
+   <signal>returnPressed()</signal>
+   <receiver>txt_PassConfirm</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>418</x>
+     <y>424</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>434</x>
+     <y>478</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>txt_PassConfirm</sender>
+   <signal>returnPressed()</signal>
+   <receiver>btn_Signup</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>486</x>
+     <y>487</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>485</x>
+     <y>602</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
