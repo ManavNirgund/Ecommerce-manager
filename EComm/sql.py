@@ -1,6 +1,6 @@
 import sqlite3
 from sqlite3 import Error
-from create_database import create_default_tables
+from database_create import create_default_tables
 
 
 def create_connection(db_file):
