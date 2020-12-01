@@ -1,3 +1,3 @@
 # Ecommerce-manager
 
-[!ER Diagram](EComm/Resources/ERDiagram.jpg)
+[ER Diagram](EComm/Resources/ERDiagram.jpg)
