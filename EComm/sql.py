@@ -1,7 +1,5 @@
 import sqlite3
 from sqlite3 import Error
-from database_create import create_default_tables
-
 
 def create_connection(db_file):
     """
@@ -24,5 +22,7 @@ if __name__ == '__main__':
     connection = create_connection(r"ecomm.sql")
     if connection is None:
         print("Connection cannot be established")
-    create_default_tables(connection)
+    #create_default_tables(connection)
+    #print(seller_insert(connection, (1, 'Name', 'email', pbkdf2_sha256.hash('pass'))))
+    #print(check_email_password(connection, 'email', 'pass'))
 
