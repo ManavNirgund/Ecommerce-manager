@@ -24,39 +24,56 @@ def create_default_tables(conn):
 
     create_queries = list()
 
+    create_queries.append(""" CREATE TABLE IF NOT EXISTS users (
+                                            user_id integer PRIMARY KEY,
+                                            user_name varchar,
+                                            email varchar,
+                                            password varchar,
+                                            phone integer,
+                                            type varchar); """)
+
+    create_queries.append(""" CREATE TABLE IF NOT EXISTS payments (
+                                        payment_id integer PRIMARY KEY,
+                                        user_id integer,
+                                        payment_method varchar,
+                                        payment_number varchar,
+                                        FOREIGN KEY (user_id) REFERENCES users (user_id)); """)
+
+    create_queries.append(""" CREATE TABLE IF NOT EXISTS bank_details (
+                                        bank_id integer PRIMARY KEY,
+                                        user_id integer,
+                                        account_number varchar,
+                                        ifsc_code varchar,
+                                        FOREIGN KEY (user_id) REFERENCES users (user_id)); """)
+
     create_queries.append(""" CREATE TABLE IF NOT EXISTS address (
                                         address_id integer PRIMARY KEY,
-                                        address text,
-                                        city text,
-                                        state text,
-                                        pincode integer); """)
+                                        user_id integer,
+                                        address varchar,
+                                        city varchar,
+                                        state varchar,
+                                        pincode integer,
+                                        FOREIGN KEY (user_id) REFERENCES users (user_id)); """)
 
-    create_queries.append(""" CREATE TABLE IF NOT EXISTS payment (
-                                        payment_id integer PRIMARY KEY,
-                                        payment_method varchar,
-                                        payment_number varchar); """)
+    create_queries.append(""" CREATE TABLE IF NOT EXISTS customers (
+                                        user_id integer PRIMARY KEY,
+                                        cur_payment_id integer,
+                                        cur_address_id integer,
+                                        FOREIGN KEY (cur_payment_id) REFERENCES payment (payment_id),
+                                        FOREIGN KEY (cur_address_id) REFERENCES address (address_id)); """)
+
+    create_queries.append(""" CREATE TABLE IF NOT EXISTS sellers (
+                                        user_id integer PRIMARY KEY,
+                                        cur_address_id integer,
+                                        cur_bank_id integer,,
+                                        FOREIGN KEY (cur_address_id) REFERENCES address (address_id),
+                                        FOREIGN KEY (cur_bank_id)    REFERENCES bank_details (bank_id)); """)
 
     create_queries.append(""" CREATE TABLE IF NOT EXISTS category (
                                         category_id integer PRIMARY KEY,
                                         category_name varchar,
                                         description varchar,
                                         thumbnail varchar); """)
-
-    create_queries.append(""" CREATE TABLE IF NOT EXISTS bank_details (
-                                        bank_id integer PRIMARY KEY,
-                                        account_number varchar,
-                                        ifsc_code varchar); """)
-
-    create_queries.append(""" CREATE TABLE IF NOT EXISTS seller (
-                                        seller_id integer PRIMARY KEY,
-                                        seller_name varchar,
-                                        email varchar,
-                                        password varchar,
-                                        address_id integer,
-                                        bank_id integer,
-                                        phone integer,
-                                        FOREIGN KEY (address_id) REFERENCES address (address_id),
-                                        FOREIGN KEY (bank_id) REFERENCES bank_details (bank_id)); """)
 
     create_queries.append(""" CREATE TABLE IF NOT EXISTS product (
                                         product_id integer PRIMARY KEY,
@@ -70,17 +87,6 @@ def create_default_tables(conn):
                                         image varchar,                                        
                                         FOREIGN KEY (seller_id) REFERENCES seller (seller_id),
                                         FOREIGN KEY (category_id) REFERENCES category (category_id)); """)
-
-    create_queries.append(""" CREATE TABLE IF NOT EXISTS customer (
-                                        customer_id integer PRIMARY KEY,
-                                        customer_name text NOT NULL,
-                                        email text NOT NULL,
-                                        password text NOT NULL,
-                                        phone integer,
-                                        address_id text,
-                                        payment_id integer,
-                                        FOREIGN KEY (address_id) REFERENCES address (address_id),
-                                        FOREIGN KEY (payment_id) REFERENCES payment (payment_id)); """)
 
     create_queries.append(""" CREATE TABLE IF NOT EXISTS cart (
                                         id integer PRIMARY KEY,

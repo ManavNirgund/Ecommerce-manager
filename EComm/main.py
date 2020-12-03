@@ -29,7 +29,7 @@ def showCustomerWindow():
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
-    window = showLogin()
+    window = showSellerSignup()
     if window.exec():
         app.exec()
 

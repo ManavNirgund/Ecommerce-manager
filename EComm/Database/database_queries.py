@@ -47,3 +47,14 @@ def verify_user(conn, email, password):
         print(e)
         return -1
 
+
+def get_all_address(conn):
+    try:
+        # SQL command to get user if it exists.
+        sql = "SELECT * FROM address WHERE email= ? ;"
+        cur = conn.cursor()
+        cur.execute(sql, )
+
+    except Error as e:
+        print(e)
+        return -1
