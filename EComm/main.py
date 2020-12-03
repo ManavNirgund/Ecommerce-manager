@@ -2,6 +2,7 @@ import sys
 from PyQt5 import QtWidgets, uic
 #from login_screen import Ui_Dialog
 
+
 def showLogin():
     win = uic.loadUi("login_screen.ui")
     win.show()
@@ -18,6 +19,7 @@ def showCustomerSignup():
     win = uic.loadUi("customer_signup.ui")
     win.show()
     return win
+
 
 def showCustomerWindow():
     win = uic.loadUi("customerwindow.ui")
