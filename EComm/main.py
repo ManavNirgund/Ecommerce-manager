@@ -4,24 +4,25 @@ from PyQt5 import QtWidgets, QtGui, QtCore, uic
 
 
 def showLogin():
-    win = uic.loadUi("login_screen.ui")
+    win = uic.loadUi("GUI/login_screen.ui")
     win.show()
     return win
 
+
 def showSellerSignup():
-    win = uic.loadUi("seller_signup.ui")
+    win = uic.loadUi("GUI/seller_signup.ui")
     win.show()
     return win
 
 
 def showCustomerSignup():
-    win = uic.loadUi("customer_signup.ui")
+    win = uic.loadUi("GUI/customer_signup.ui")
     win.show()
     return win
 
 
 def showCustomerWindow():
-    win = uic.loadUi("customerwindow.ui")
+    win = uic.loadUi("GUI/customerwindow.ui")
     win.show()
     return win
 
@@ -35,7 +36,7 @@ def showCustomerWindow():
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
-    window = showCustomerWindow()
+    window = showSellerSignup()
     window.show()
     app.exec()
 
