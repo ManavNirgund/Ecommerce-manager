@@ -31,16 +31,19 @@
    </iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true">background: #444</string>
+   <string notr="true">background: white;</string>
   </property>
   <widget class="QFrame" name="frm_Signup">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>951</width>
-     <height>751</height>
+     <x>0</x>
+     <y>0</y>
+     <width>971</width>
+     <height>771</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background: #444</string>
    </property>
    <property name="frameShape">
     <enum>QFrame::StyledPanel</enum>
@@ -79,16 +82,16 @@ font-weight: bold;</string>
     <property name="geometry">
      <rect>
       <x>380</x>
-      <y>400</y>
+      <y>390</y>
       <width>241</width>
       <height>31</height>
      </rect>
     </property>
     <property name="focusPolicy">
-     <enum>Qt::NoFocus</enum>
+     <enum>Qt::ClickFocus</enum>
     </property>
     <property name="styleSheet">
-     <string notr="true">border: 1px solid rgb(243, 76, 83);
+     <string notr="true">border: 2px solid rgb(243, 76, 83);
 border-radius: 15px;
 padding-left: 10px;
 padding-bottom: 1px;
@@ -100,16 +103,16 @@ font-size: 20px;</string>
     <property name="geometry">
      <rect>
       <x>380</x>
-      <y>320</y>
+      <y>310</y>
       <width>241</width>
       <height>31</height>
      </rect>
     </property>
     <property name="focusPolicy">
-     <enum>Qt::NoFocus</enum>
+     <enum>Qt::ClickFocus</enum>
     </property>
     <property name="styleSheet">
-     <string notr="true">border: 1px solid rgb(243, 76, 83);
+     <string notr="true">border: 2px solid rgb(243, 76, 83);
 border-radius: 15px;
 padding-left: 10px;
 padding-bottom: 1px;
@@ -121,7 +124,7 @@ font-size: 20px;</string>
     <property name="geometry">
      <rect>
       <x>230</x>
-      <y>400</y>
+      <y>390</y>
       <width>111</width>
       <height>31</height>
      </rect>
@@ -141,7 +144,7 @@ font-size: 20px;</string>
     <property name="geometry">
      <rect>
       <x>230</x>
-      <y>320</y>
+      <y>310</y>
       <width>111</width>
       <height>31</height>
      </rect>
@@ -161,7 +164,7 @@ font-size: 20px;</string>
     <property name="geometry">
      <rect>
       <x>220</x>
-      <y>240</y>
+      <y>230</y>
       <width>121</width>
       <height>31</height>
      </rect>
@@ -181,7 +184,7 @@ font-size: 20px;</string>
     <property name="geometry">
      <rect>
       <x>380</x>
-      <y>240</y>
+      <y>230</y>
       <width>241</width>
       <height>31</height>
      </rect>
@@ -190,7 +193,7 @@ font-size: 20px;</string>
      <enum>Qt::StrongFocus</enum>
     </property>
     <property name="styleSheet">
-     <string notr="true">border: 1px solid rgb(243, 76, 83);
+     <string notr="true">border: 2px solid rgb(243, 76, 83);
 border-radius: 15px;
 padding-left: 10px;
 padding-bottom: 1px;
@@ -205,16 +208,16 @@ font-size: 20px;</string>
     <property name="geometry">
      <rect>
       <x>380</x>
-      <y>480</y>
+      <y>470</y>
       <width>241</width>
       <height>31</height>
      </rect>
     </property>
     <property name="focusPolicy">
-     <enum>Qt::NoFocus</enum>
+     <enum>Qt::ClickFocus</enum>
     </property>
     <property name="styleSheet">
-     <string notr="true">border: 1px solid rgb(243, 76, 83);
+     <string notr="true">border: 2px solid rgb(243, 76, 83);
 border-radius: 15px;
 padding-left: 10px;
 padding-bottom: 1px;
@@ -226,7 +229,7 @@ font-size: 20px;</string>
     <property name="geometry">
      <rect>
       <x>180</x>
-      <y>480</y>
+      <y>470</y>
       <width>161</width>
       <height>31</height>
      </rect>
@@ -287,22 +290,6 @@ font-size: 20px;
  <resources/>
  <connections>
   <connection>
-   <sender>txt_SelEmail</sender>
-   <signal>returnPressed()</signal>
-   <receiver>txt_Pass</receiver>
-   <slot>setFocus()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>553</x>
-     <y>362</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>565</x>
-     <y>408</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>txt_Pass</sender>
    <signal>returnPressed()</signal>
    <receiver>txt_PassConfirm</receiver>
@@ -314,7 +301,7 @@ font-size: 20px;
     </hint>
     <hint type="destinationlabel">
      <x>434</x>
-     <y>478</y>
+     <y>480</y>
     </hint>
    </hints>
   </connection>
@@ -331,6 +318,38 @@ font-size: 20px;
     <hint type="destinationlabel">
      <x>485</x>
      <y>602</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>txt_SelEmail</sender>
+   <signal>returnPressed()</signal>
+   <receiver>txt_Pass</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>553</x>
+     <y>350</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>565</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit</sender>
+   <signal>returnPressed()</signal>
+   <receiver>txt_SelEmail</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>478</x>
+     <y>256</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>488</x>
+     <y>327</y>
     </hint>
    </hints>
   </connection>

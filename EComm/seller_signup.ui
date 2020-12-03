@@ -6,9 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>961</width>
-    <height>771</height>
+    <width>971</width>
+    <height>770</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>971</width>
+    <height>770</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>971</width>
+    <height>770</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Seller Signup</string>
@@ -16,11 +28,26 @@
   <widget class="QFrame" name="frm_Signup">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>941</width>
-     <height>751</height>
+     <x>0</x>
+     <y>0</y>
+     <width>971</width>
+     <height>770</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>16777215</width>
+     <height>16777215</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background: #444;</string>
    </property>
    <property name="frameShape">
     <enum>QFrame::StyledPanel</enum>
@@ -34,7 +61,7 @@
       <x>340</x>
       <y>60</y>
       <width>251</width>
-      <height>71</height>
+      <height>91</height>
      </rect>
     </property>
     <property name="layoutDirection">
@@ -46,66 +73,69 @@ font-size: 50px;
 font-weight: bold;</string>
     </property>
     <property name="text">
-     <string>depot</string>
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>Resources/Icons/depot.png</pixmap>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QLabel" name="lbl_Username">
-    <property name="geometry">
-     <rect>
-      <x>220</x>
-      <y>240</y>
-      <width>121</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Username</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
     </property>
    </widget>
    <widget class="QLineEdit" name="txt_Pass">
     <property name="geometry">
      <rect>
       <x>380</x>
-      <y>360</y>
-      <width>201</width>
+      <y>410</y>
+      <width>241</width>
       <height>31</height>
      </rect>
     </property>
-   </widget>
-   <widget class="QLineEdit" name="txt_Username">
-    <property name="geometry">
-     <rect>
-      <x>380</x>
-      <y>240</y>
-      <width>201</width>
-      <height>31</height>
-     </rect>
+    <property name="focusPolicy">
+     <enum>Qt::ClickFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid rgb(243, 76, 83);
+border-radius: 15px;
+padding-left: 10px;
+padding-bottom: 1px;
+color: white;
+font-size: 20px;</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="txt_SelEmail">
     <property name="geometry">
      <rect>
       <x>380</x>
-      <y>300</y>
-      <width>201</width>
+      <y>270</y>
+      <width>241</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::ClickFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid rgb(243, 76, 83);
+border-radius: 15px;
+padding-left: 10px;
+padding-bottom: 1px;
+color: white;
+font-size: 20px;</string>
     </property>
    </widget>
    <widget class="QLabel" name="lbl_Pass">
     <property name="geometry">
      <rect>
       <x>230</x>
-      <y>360</y>
+      <y>410</y>
       <width>111</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: white;
+font-size: 20px;</string>
     </property>
     <property name="text">
      <string>Password</string>
@@ -118,10 +148,14 @@ font-weight: bold;</string>
     <property name="geometry">
      <rect>
       <x>230</x>
-      <y>300</y>
+      <y>270</y>
       <width>111</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: white;
+font-size: 20px;</string>
     </property>
     <property name="text">
      <string>E-Mail</string>
@@ -134,10 +168,14 @@ font-weight: bold;</string>
     <property name="geometry">
      <rect>
       <x>220</x>
-      <y>180</y>
+      <y>200</y>
       <width>121</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: white;
+font-size: 20px;</string>
     </property>
     <property name="text">
      <string>Full Name</string>
@@ -150,10 +188,21 @@ font-weight: bold;</string>
     <property name="geometry">
      <rect>
       <x>380</x>
-      <y>180</y>
-      <width>201</width>
+      <y>200</y>
+      <width>241</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::StrongFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid rgb(243, 76, 83);
+border-radius: 15px;
+padding-left: 10px;
+padding-bottom: 1px;
+color: white;
+font-size: 20px;</string>
     </property>
     <property name="text">
      <string/>
@@ -163,20 +212,35 @@ font-weight: bold;</string>
     <property name="geometry">
      <rect>
       <x>380</x>
-      <y>420</y>
-      <width>201</width>
+      <y>480</y>
+      <width>241</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::ClickFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid rgb(243, 76, 83);
+border-radius: 15px;
+padding-left: 10px;
+padding-bottom: 1px;
+color: white;
+font-size: 20px;</string>
     </property>
    </widget>
    <widget class="QLabel" name="lbl_PassConfirm">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>420</y>
-      <width>111</width>
+      <x>180</x>
+      <y>480</y>
+      <width>161</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: white;
+font-size: 20px;</string>
     </property>
     <property name="text">
      <string>Confirm Password</string>
@@ -195,7 +259,10 @@ font-weight: bold;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font-size: 20px;</string>
+     <string notr="true">border: none;
+border-radius: 15px;
+background: rgb(243, 76, 83);
+font-size: 20px;</string>
     </property>
     <property name="text">
      <string>Signup</string>
@@ -212,7 +279,8 @@ font-weight: bold;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">border: none;
-background: #444;
+border-radius: 15px;
+background: #222;
 color: white;
 font-size: 20px;
 </string>
@@ -221,27 +289,42 @@ font-size: 20px;
      <string>Sign up as a seller</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="txt_PassConfirm_2">
+   <widget class="QLineEdit" name="txt_Phone">
     <property name="geometry">
      <rect>
       <x>380</x>
-      <y>480</y>
-      <width>201</width>
+      <y>340</y>
+      <width>241</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::ClickFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid rgb(243, 76, 83);
+border-radius: 15px;
+padding-left: 10px;
+padding-bottom: 1px;
+color: white;
+font-size: 20px;</string>
     </property>
    </widget>
-   <widget class="QLabel" name="lbl_PassConfirm_2">
+   <widget class="QLabel" name="lbl_Phone">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>480</y>
-      <width>111</width>
+      <x>210</x>
+      <y>340</y>
+      <width>131</width>
       <height>31</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: white;
+font-size: 20px;</string>
+    </property>
     <property name="text">
-     <string>Confirm Password</string>
+     <string>Phone Number</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -250,5 +333,70 @@ font-size: 20px;
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>lineEdit</sender>
+   <signal>returnPressed()</signal>
+   <receiver>txt_SelEmail</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>411</x>
+     <y>221</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>418</x>
+     <y>286</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>txt_SelEmail</sender>
+   <signal>returnPressed()</signal>
+   <receiver>txt_Phone</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>463</x>
+     <y>299</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>475</x>
+     <y>351</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>txt_Phone</sender>
+   <signal>returnPressed()</signal>
+   <receiver>txt_Pass</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>507</x>
+     <y>361</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>521</x>
+     <y>421</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>txt_Pass</sender>
+   <signal>returnPressed()</signal>
+   <receiver>txt_PassConfirm</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>558</x>
+     <y>426</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>570</x>
+     <y>499</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
