@@ -1,12 +1,11 @@
 import sys
-from PyQt5 import QtWidgets, uic
+from PyQt5 import QtWidgets, QtGui, QtCore, uic
 #from login_screen import Ui_Dialog
 
 def showLogin():
     win = uic.loadUi("login_screen.ui")
     win.show()
     return win
-
 
 def showSellerSignup():
     win = uic.loadUi("seller_signup.ui")
@@ -25,17 +24,18 @@ def showCustomerWindow():
     return win
 
 
-if __name__ == "__main__":
-    app = QtWidgets.QApplication(sys.argv)
-    window = showLogin()
-    if window.exec():
-        app.exec()
-
 '''if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     window = showCustomerWindow()
+    if window.exec():
+        #d.exec_()
+        app.exec()'''
+
+if __name__ == "__main__":
+    app = QtWidgets.QApplication(sys.argv)
+    window = showCustomerWindow()
     window.show()
-    app.exec()'''
+    app.exec()
 
 '''class MainWindow(QtWidgets.QMainWindow, Ui_Dialog):
     def __init__(self, *args, obj=None, **kwargs):
@@ -47,5 +47,5 @@ app = QtWidgets.QApplication(sys.argv)
 
 window = MainWindow()
 window.show()
-app.exec()
-'''
+app.exec()'''
+
