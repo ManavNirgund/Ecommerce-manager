@@ -27,7 +27,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normalon>Resources/Icons/Logo.png</normalon>
+    <normalon>../Resources/Icons/icon.png</normalon>
    </iconset>
   </property>
   <widget class="QFrame" name="frame">
@@ -55,7 +55,7 @@ color: white;</string>
       <x>0</x>
       <y>30</y>
       <width>401</width>
-      <height>91</height>
+      <height>111</height>
      </rect>
     </property>
     <property name="layoutDirection">
@@ -70,7 +70,7 @@ font-weight: bold;</string>
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>Resources/Icons/depot.png</pixmap>
+     <pixmap>../Resources/Icons/depot200.png</pixmap>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -79,9 +79,9 @@ font-weight: bold;</string>
    <widget class="QLineEdit" name="txt_Pass">
     <property name="geometry">
      <rect>
-      <x>140</x>
+      <x>130</x>
       <y>230</y>
-      <width>221</width>
+      <width>241</width>
       <height>31</height>
      </rect>
     </property>
@@ -103,9 +103,9 @@ font-size: 20px;</string>
    <widget class="QLineEdit" name="txt_Email">
     <property name="geometry">
      <rect>
-      <x>140</x>
+      <x>130</x>
       <y>160</y>
-      <width>221</width>
+      <width>241</width>
       <height>31</height>
      </rect>
     </property>
@@ -129,7 +129,7 @@ font-size: 20px;</string>
      <rect>
       <x>10</x>
       <y>230</y>
-      <width>91</width>
+      <width>101</width>
       <height>31</height>
      </rect>
     </property>
@@ -149,7 +149,7 @@ font-size: 20px;</string>
      <rect>
       <x>40</x>
       <y>160</y>
-      <width>61</width>
+      <width>71</width>
       <height>31</height>
      </rect>
     </property>
@@ -167,9 +167,9 @@ font-size: 20px;</string>
    <widget class="QLabel" name="lbl_Alt">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>380</y>
-      <width>401</width>
+      <x>100</x>
+      <y>390</y>
+      <width>211</width>
       <height>61</height>
      </rect>
     </property>
@@ -189,7 +189,7 @@ Sign up over here!!!</string>
     <property name="geometry">
      <rect>
       <x>110</x>
-      <y>450</y>
+      <y>460</y>
       <width>181</width>
       <height>51</height>
      </rect>
@@ -215,7 +215,7 @@ font-size: 25px;</string>
     <property name="geometry">
      <rect>
       <x>110</x>
-      <y>320</y>
+      <y>330</y>
       <width>181</width>
       <height>51</height>
      </rect>
