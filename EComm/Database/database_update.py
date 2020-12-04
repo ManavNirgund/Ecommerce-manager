@@ -1,18 +1,30 @@
 from sqlite3 import Error
 
 
-def seller_insert(conn, seller_info):
+def user_insert(conn, user_info):
     """
-    Inserts a row in 'seller' table with the values passed in 'seller_info'
+    Inserts a row in 'user' table with the values passed in 'user_info'
+    Also, inserts a row in the 'seller' or 'customer' table according to the type of user.
+
     Parameters:
         conn: Connection object
-        seller_info: a tuple of values to insert
+        user_info: a tuple of values to insert
     """
     try:
-        sql = " INSERT into seller(seller_id, seller_name, email, password)" \
-              " VALUES (?, ?, ?, ?) "
+        sql = " INSERT into user(user_id, user_name, email, password, phone, type)" \
+              " VALUES (?, ?, ?, ?, ?, ?) "
         cur = conn.cursor()
-        cur.execute(sql, seller_info)
+        cur.execute(sql, user_info)
+
+        if user_info[-1] == "seller":
+            sql = f" INSERT into seller(user_id) VALUES ({user_info[0]}) "
+            cur = conn.cursor()
+            cur.execute(sql)
+        elif user_info[-1] == "customer":
+            sql = f" INSERT into customer(user_id) VALUES ({user_info[0]}) "
+            cur = conn.cursor()
+            cur.execute(sql)
+
         conn.commit()
         return cur.lastrowid
     except Error as e:
@@ -20,18 +32,22 @@ def seller_insert(conn, seller_info):
         return -1
 
 
-def customer_insert(conn, customer_info):
+def user_update(conn, user_info):
     """
-    Inserts a row in 'customer' table with the values passed in 'customer_info'
+    Updates a row in 'user' table with the values passed in 'user_info'
     Parameters:
         conn: Connection object
-        customer_info: a tuple of values to insert
+        user_info: a tuple of values to update
     """
     try:
-        sql = " INSERT into customer(customer_id, customer_name, email, password)" \
-              " VALUES (?, ?, ?, ?) "
+        sql = " UPDATE user SET" \
+              " user_name = ? ," \
+              " email = ? ," \
+              " password = ? ," \
+              " phone = ? " \
+              " WHERE user_id = ?"
         cur = conn.cursor()
-        cur.execute(sql, customer_info)
+        cur.execute(sql, user_info)
         conn.commit()
         return cur.lastrowid
     except Error as e:
@@ -41,20 +57,16 @@ def customer_insert(conn, customer_info):
 
 def seller_update(conn, seller_info):
     """
-    Updates a row in 'seller' table with the values passed in 'signup_seller_info'
+    Updates a row in 'seller' table with the values passed in 'seller_info'
     Parameters:
         conn: Connection object
         seller_info: a tuple of values to update
     """
     try:
         sql = " UPDATE seller SET" \
-              " seller_name = ? ," \
-              " email = ? ," \
-              " password = ? ," \
-              " address_id = ? ," \
-              " bank_id = ? ," \
-              " phone = ? " \
-              " WHERE seller_id = ?"
+              " cur_address_id = ? ," \
+              " cur_bank_id = ? " \
+              " WHERE user_id = ?"
         cur = conn.cursor()
         cur.execute(sql, seller_info)
         conn.commit()
@@ -72,16 +84,92 @@ def customer_update(conn, customer_info):
         customer_info: a tuple of values to update
     """
     try:
-        sql = " UPDATE seller SET" \
-              " customer_name = ? ," \
-              " email = ? ," \
-              " password = ? ," \
-              " phone = ? " \
-              " address_id = ? ," \
-              " bank_id = ? " \
-              " WHERE customer_id = ?"
+        sql = " UPDATE customer SET" \
+              " cur_address_id = ? ," \
+              " cur_payment_id = ? " \
+              " WHERE user_id = ?"
         cur = conn.cursor()
         cur.execute(sql, customer_info)
+        conn.commit()
+        return cur.lastrowid
+    except Error as e:
+        print(e)
+        return -1
+
+
+def payment_insert(conn, payment_info):
+    """
+    Inserts a row in 'payment' table with the values passed in 'payment_info'
+    Parameters:
+        conn: Connection object
+        payment_info: a tuple of values to insert
+    """
+    try:
+        sql = " INSERT into payment(payment_id, user_id, payment_method, payment_number)" \
+              " VALUES (?, ?, ?, ?) "
+        cur = conn.cursor()
+        cur.execute(sql, payment_info)
+        conn.commit()
+        return cur.lastrowid
+    except Error as e:
+        print(e)
+        return -1
+
+
+def payment_update(conn, payment_info):
+    """
+    Updates a row in 'payment' table with the values passed in 'payment_info'
+    Parameters:
+        conn: Connection object
+        payment_info: a tuple of values to update
+    """
+    try:
+        sql = " UPDATE payment SET" \
+              " payment_method = ? ," \
+              " payment_number = ? " \
+              " WHERE payment_id = ?"
+        cur = conn.cursor()
+        cur.execute(sql, payment_info)
+        conn.commit()
+        return cur.lastrowid
+    except Error as e:
+        print(e)
+        return -1
+
+
+def bank_detail_insert(conn, bank_info):
+    """
+    Inserts a row in 'bank_detail' table with the values passed in 'bank_info'
+    Parameters:
+        conn: Connection object
+        bank_info: a tuple of values to insert
+    """
+    try:
+        sql = " INSERT into bank_details (bank_id, user_id, account_number, ifsc_code)" \
+              " VALUES (?, ?, ?, ?) "
+        cur = conn.cursor()
+        cur.execute(sql, bank_info)
+        conn.commit()
+        return cur.lastrowid
+    except Error as e:
+        print(e)
+        return -1
+
+
+def bank_detail_update(conn, bank_info):
+    """
+    Updates a row in 'bank_detail' table with the values passed in 'bank_info'
+    Parameters:
+        conn: Connection object
+        bank_info: a tuple of values to update
+    """
+    try:
+        sql = " UPDATE bank_details SET" \
+              " account_number = ? ," \
+              " ifsc_code = ? " \
+              " WHERE bank_id = ?"
+        cur = conn.cursor()
+        cur.execute(sql, bank_info)
         conn.commit()
         return cur.lastrowid
     except Error as e:
@@ -97,8 +185,8 @@ def address_insert(conn, address_info):
         address_info: a tuple of values to insert
     """
     try:
-        sql = " INSERT into address(address_id, address, city, state, pincode)" \
-              " VALUES (?, ?, ?, ?, ?) "
+        sql = " INSERT into address(address_id, user_id, address, city, state, pincode)" \
+              " VALUES (?, ?, ?, ?, ?, ?) "
         cur = conn.cursor()
         cur.execute(sql, address_info)
         conn.commit()
@@ -124,46 +212,6 @@ def address_update(conn, address_info):
               " WHERE address_id = ?"
         cur = conn.cursor()
         cur.execute(sql, address_info)
-        conn.commit()
-        return cur.lastrowid
-    except Error as e:
-        print(e)
-        return -1
-
-
-def payment_insert(conn, payment_info):
-    """
-    Inserts a row in 'payment' table with the values passed in 'payment_info'
-    Parameters:
-        conn: Connection object
-        payment_info: a tuple of values to insert
-    """
-    try:
-        sql = " INSERT into payment(payment_id, payment_method, payment_number)" \
-              " VALUES (?, ?, ?) "
-        cur = conn.cursor()
-        cur.execute(sql, payment_info)
-        conn.commit()
-        return cur.lastrowid
-    except Error as e:
-        print(e)
-        return -1
-
-
-def payment_update(conn, payment_info):
-    """
-    Updates a row in 'payment' table with the values passed in 'payment_info'
-    Parameters:
-        conn: Connection object
-        payment_info: a tuple of values to update
-    """
-    try:
-        sql = " UPDATE payment SET" \
-              " payment_method = ? ," \
-              " payment_number = ? " \
-              " WHERE payment_id = ?"
-        cur = conn.cursor()
-        cur.execute(sql, payment_info)
         conn.commit()
         return cur.lastrowid
     except Error as e:
@@ -212,46 +260,6 @@ def category_update(conn, category_info):
         return -1
 
 
-def bank_details_insert(conn, bank_info):
-    """
-    Inserts a row in 'bank_details' table with the values passed in 'bank_info'
-    Parameters:
-        conn: Connection object
-        bank_info: a tuple of values to insert
-    """
-    try:
-        sql = " INSERT into bank_details (bank_id, account_number, ifsc_code)" \
-              " VALUES (?, ?, ?) "
-        cur = conn.cursor()
-        cur.execute(sql, bank_info)
-        conn.commit()
-        return cur.lastrowid
-    except Error as e:
-        print(e)
-        return -1
-
-
-def bank_details_update(conn, bank_info):
-    """
-    Updates a row in 'bank_details' table with the values passed in 'bank_info'
-    Parameters:
-        conn: Connection object
-        bank_info: a tuple of values to update
-    """
-    try:
-        sql = " UPDATE bank_details SET" \
-              " account_number = ? ," \
-              " ifsc_code = ? " \
-              " WHERE bank_id = ?"
-        cur = conn.cursor()
-        cur.execute(sql, bank_info)
-        conn.commit()
-        return cur.lastrowid
-    except Error as e:
-        print(e)
-        return -1
-
-
 def product_insert(conn, product_info):
     """
     Inserts a row in 'product' table with the values passed in 'product_info'
@@ -260,7 +268,7 @@ def product_insert(conn, product_info):
         product_info: a tuple of values to insert
     """
     try:
-        sql = " INSERT into product(product_id, seller_id, product_name, brand, category_id," \
+        sql = " INSERT into product(product_id, user_id, product_name, brand, category_id," \
               " price, product_desc, tags, image)" \
               " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) "
         cur = conn.cursor()
@@ -306,8 +314,8 @@ def cart_insert(conn, cart_info):
         cart_info: a tuple of values to insert
     """
     try:
-        sql = " INSERT into cart(id, cart_id, customer_id, product_id, item_qty)" \
-              " VALUES (?, ?, ?, ?, ?) "
+        sql = " INSERT into cart(cart_id, user_id, product_id, product_qty)" \
+              " VALUES (?, ?, ?, ?) "
         cur = conn.cursor()
         cur.execute(sql, cart_info)
         conn.commit()
@@ -326,11 +334,9 @@ def cart_update(conn, cart_info):
     """
     try:
         sql = " UPDATE cart SET" \
-              " cart_id = ? ," \
-              " customer_id = ? ," \
               " product_id = ? ," \
-              " item_qty = ? " \
-              " WHERE id = ?"
+              " product_qty = ? " \
+              " WHERE cart_id = ?"
         cur = conn.cursor()
         cur.execute(sql, cart_info)
         conn.commit()
@@ -348,7 +354,7 @@ def wishlist_insert(conn, wishlist_info):
         wishlist_info: a tuple of values to insert
     """
     try:
-        sql = " INSERT into wishlist(wishlist_id, customer_id, product_id)" \
+        sql = " INSERT into wishlist(wishlist_id, user_id, product_id)" \
               " VALUES (?, ?, ?) "
         cur = conn.cursor()
         cur.execute(sql, wishlist_info)
@@ -359,20 +365,41 @@ def wishlist_insert(conn, wishlist_info):
         return -1
 
 
-def wishlist_update(conn, wishlist_info):
+def order_insert(conn, order_info):
     """
-    Updates a row in 'wishlist' table with the values passed in 'wishlist_info'
+    Inserts a row in 'order' table with the values passed in 'order_info'
     Parameters:
         conn: Connection object
-        wishlist_info: a tuple of values to update
+        order_info: a tuple of values to insert
     """
     try:
-        sql = " UPDATE wishlist SET" \
-              " customer_id = ? ," \
-              " product_id = ? " \
-              " WHERE wishlist_id = ?"
+        sql = " INSERT into orders(order_id, user_id, total_cost, address, payment, order_date)" \
+              " VALUES (?, ?, ?, ?, ?, ?) "
         cur = conn.cursor()
-        cur.execute(sql, wishlist_info)
+        cur.execute(sql, order_info)
+        conn.commit()
+        return cur.lastrowid
+    except Error as e:
+        print(e)
+        return -1
+
+
+def order_update(conn, order_info):
+    """
+    Updates a row in 'order' table with the values passed in 'order_info'
+    Parameters:
+        conn: Connection object
+        order_info: a tuple of values to update
+    """
+    try:
+        sql = " UPDATE orders SET" \
+              " total_cost = ? ," \
+              " address = ? ," \
+              " payment = ? ," \
+              " order_date = ? " \
+              " WHERE order_id = ?"
+        cur = conn.cursor()
+        cur.execute(sql, order_info)
         conn.commit()
         return cur.lastrowid
     except Error as e:
@@ -388,8 +415,9 @@ def order_details_insert(conn, order_details_info):
         order_details_info: a tuple of values to insert
     """
     try:
-        sql = " INSERT into order_details(order_id, product_id, product_name, product_qty, product_cost, total_cost)" \
-              " VALUES (?, ?, ?, ?, ?, ?) "
+        sql = " INSERT into order_details(id, order_id, product_id, product_name, product_qty," \
+              " product_cost, total_cost)" \
+              " VALUES (?, ?, ?, ?, ?, ?, ?) "
         cur = conn.cursor()
         cur.execute(sql, order_details_info)
         conn.commit()
@@ -413,7 +441,7 @@ def order_details_update(conn, order_details_info):
               " product_qty = ? ," \
               " product_cost = ? ," \
               " total_cost = ? " \
-              " WHERE order_id = ?"
+              " WHERE id = ?"
         cur = conn.cursor()
         cur.execute(sql, order_details_info)
         conn.commit()
@@ -421,47 +449,3 @@ def order_details_update(conn, order_details_info):
     except Error as e:
         print(e)
         return -1
-
-
-def orders_insert(conn, orders_info):
-    """
-    Inserts a row in 'orders' table with the values passed in 'orders_info'
-    Parameters:
-        conn: Connection object
-        orders_info: a tuple of values to insert
-    """
-    try:
-        sql = " INSERT into orders(id, order_id, customer_id, total_cost, address_id, payment_id, order_date)" \
-              " VALUES (?, ?, ?, ?, ?, ?) "
-        cur = conn.cursor()
-        cur.execute(sql, orders_info)
-        conn.commit()
-        return cur.lastrowid
-    except Error as e:
-        print(e)
-        return -1
-
-
-def orders_update(conn, orders_info):
-    """
-    Updates a row in 'orders' table with the values passed in 'orders_info'
-    Parameters:
-        conn: Connection object
-        orders_info: a tuple of values to update
-    """
-    try:
-        sql = " UPDATE orders SET" \
-              " customer_id = ? ," \
-              " total_cost = ? ," \
-              " address_id = ? ," \
-              " payment_id = ? ," \
-              " order_date = ? " \
-              " WHERE order_id = ?"
-        cur = conn.cursor()
-        cur.execute(sql, orders_info)
-        conn.commit()
-        return cur.lastrowid
-    except Error as e:
-        print(e)
-        return -1
-

@@ -25,12 +25,12 @@ def create_default_tables(conn):
     create_queries = list()
 
     create_queries.append(""" CREATE TABLE IF NOT EXISTS user (
-                                            user_id integer PRIMARY KEY,
-                                            user_name varchar,
-                                            email varchar,
-                                            password varchar,
-                                            phone integer,
-                                            type varchar); """)
+                                        user_id integer PRIMARY KEY,
+                                        user_name varchar,
+                                        email varchar UNIQUE KEY,
+                                        password varchar,
+                                        phone integer UNIQUE KEY,
+                                        type varchar); """)
 
     create_queries.append(""" CREATE TABLE IF NOT EXISTS payment (
                                         payment_id integer PRIMARY KEY,
@@ -57,8 +57,8 @@ def create_default_tables(conn):
 
     create_queries.append(""" CREATE TABLE IF NOT EXISTS customer (
                                         user_id integer PRIMARY KEY,
-                                        cur_payment_id integer,
                                         cur_address_id integer,
+                                        cur_payment_id integer,
                                         FOREIGN KEY (cur_payment_id) REFERENCES payment (payment_id),
                                         FOREIGN KEY (cur_address_id) REFERENCES address (address_id)); """)
 
@@ -92,20 +92,20 @@ def create_default_tables(conn):
                                         cart_id integer PRIMARY KEY,
                                         user_id integer,
                                         product_id integer,
-                                        item_qty integer,
+                                        product_qty integer,
                                         FOREIGN KEY (user_id) REFERENCES user (user_id),
                                         FOREIGN KEY (product_id) REFERENCES product (product_id)); """)
 
     create_queries.append(""" CREATE TABLE IF NOT EXISTS wishlist (
                                         wishlist_id integer PRIMARY KEY,
-                                        customer_id integer,
+                                        user_id integer,
                                         product_id integer,
                                         FOREIGN KEY (user_id) REFERENCES user (user_id),
                                         FOREIGN KEY (product_id) REFERENCES product (product_id)); """)
 
     create_queries.append(""" CREATE TABLE IF NOT EXISTS order (
                                         order_id integer PRIMARY KEY,
-                                        customer_id integer,
+                                        user_id integer,
                                         total_cost real,
                                         address varchar,
                                         payment varchar,
