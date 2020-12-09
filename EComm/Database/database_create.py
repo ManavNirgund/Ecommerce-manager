@@ -12,6 +12,7 @@ def create_table(conn, create_table_query):
         c = conn.cursor()
         c.execute(create_table_query)
     except Error as e:
+        print(create_table_query)
         print(e)
 
 
@@ -27,9 +28,9 @@ def create_default_tables(conn):
     create_queries.append(""" CREATE TABLE IF NOT EXISTS user (
                                         user_id integer PRIMARY KEY,
                                         user_name varchar,
-                                        email varchar UNIQUE KEY,
+                                        email varchar UNIQUE,
                                         password varchar,
-                                        phone integer UNIQUE KEY,
+                                        phone integer UNIQUE,
                                         type varchar); """)
 
     create_queries.append(""" CREATE TABLE IF NOT EXISTS payment (
@@ -65,7 +66,7 @@ def create_default_tables(conn):
     create_queries.append(""" CREATE TABLE IF NOT EXISTS seller (
                                         user_id integer PRIMARY KEY,
                                         cur_address_id integer,
-                                        cur_bank_id integer,,
+                                        cur_bank_id integer,
                                         FOREIGN KEY (cur_address_id) REFERENCES address (address_id),
                                         FOREIGN KEY (cur_bank_id)    REFERENCES bank_detail (bank_id)); """)
 
@@ -103,7 +104,7 @@ def create_default_tables(conn):
                                         FOREIGN KEY (user_id) REFERENCES user (user_id),
                                         FOREIGN KEY (product_id) REFERENCES product (product_id)); """)
 
-    create_queries.append(""" CREATE TABLE IF NOT EXISTS order (
+    create_queries.append(""" CREATE TABLE IF NOT EXISTS orders (
                                         order_id integer PRIMARY KEY,
                                         user_id integer,
                                         total_cost real,
@@ -120,7 +121,7 @@ def create_default_tables(conn):
                                         product_qty integer,
                                         product_cost real,
                                         total_cost real,
-                                        FOREIGN KEY (order_id) REFERENCES order (order_id),
+                                        FOREIGN KEY (order_id) REFERENCES orders (order_id),
                                         FOREIGN KEY (product_id) REFERENCES product (product_id),
                                         FOREIGN KEY (product_name) REFERENCES product (product_name)); """)
 

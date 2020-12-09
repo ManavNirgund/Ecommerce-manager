@@ -1,54 +1,44 @@
 import sys
-from PyQt5 import QtWidgets, QtGui, QtCore, uic
-#from login_screen import Ui_Dialog
+import sqlite3
+from sqlite3 import Error
+from PyQt5 import QtWidgets
+from GUI.login_screen import LoginScreenGUI
+from Database.database_create import create_default_tables
 
 
+def create_connection(db_file):
+    """
+    create a database connection to the SQLite database specified by db_file
+    Parameters:
+        db_file: database file
+    Returns:
+        conn: Connection object or None
+    """
+    conn = None
+    try:
+        conn = sqlite3.connect(db_file)
+        create_default_tables(conn)
+        return conn
+    except Error as e:
+        print(e)
+    return conn
+
+
+'''
 def showLogin():
     win = uic.loadUi("GUI/login_screen.ui")
     win.show()
     return win
-
-
-def showSellerSignup():
-    win = uic.loadUi("GUI/seller_signup.ui")
-    win.show()
-    return win
-
-
-def showCustomerSignup():
-    win = uic.loadUi("GUI/customer_signup.ui")
-    win.show()
-    return win
-
-
-def showCustomerWindow():
-    win = uic.loadUi("GUI/customerwindow.ui")
-    win.show()
-    return win
-
-
-'''if __name__ == "__main__":
-    app = QtWidgets.QApplication(sys.argv)
-    window = showCustomerWindow()
-    if window.exec():
-        #d.exec_()
-        app.exec()'''
+'''
 
 if __name__ == "__main__":
-    app = QtWidgets.QApplication(sys.argv)
-    window = showSellerSignup()
-    window.show()
-    app.exec()
+    if not QtWidgets.QApplication.instance():
+        app = QtWidgets.QApplication(sys.argv)
+    else:
+        app = QtWidgets.QApplication.instance()
 
-'''class MainWindow(QtWidgets.QMainWindow, Ui_Dialog):
-    def __init__(self, *args, obj=None, **kwargs):
-        super(MainWindow, self).__init__(*args, **kwargs)
-        self.setupUi(self)
-
-
-app = QtWidgets.QApplication(sys.argv)
-
-window = MainWindow()
-window.show()
-app.exec()'''
-
+    mainform = QtWidgets.QMainWindow()
+    db_conn = create_connection('ecomm.sql')
+    ui = LoginScreenGUI(db_conn, mainform)
+    mainform.show()
+    sys.exit(app.exec())

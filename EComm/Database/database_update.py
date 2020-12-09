@@ -367,7 +367,7 @@ def wishlist_insert(conn, wishlist_info):
 
 def order_insert(conn, order_info):
     """
-    Inserts a row in 'order' table with the values passed in 'order_info'
+    Inserts a row in 'orders' table with the values passed in 'order_info'
     Parameters:
         conn: Connection object
         order_info: a tuple of values to insert
