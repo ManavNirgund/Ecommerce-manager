@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import QMessageBox
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-from GUI.customer_signup import CustomerSignupGUI
+from GUI.signup_screen import SignupGUI
 from Database.database_queries import verify_user
 from Database.database_update import user_insert
 
@@ -143,7 +143,7 @@ class LoginScreenGUI(object):
 
     def openSignupForm(self):
         self.mainform = QtWidgets.QMainWindow()
-        CustomerSignupGUI(self.conn, self.mainform)
+        SignupGUI(self.conn, self.mainform)
         self.mainform.show()
 
     def createMessageBox(self, title, message):

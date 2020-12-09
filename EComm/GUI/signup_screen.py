@@ -7,9 +7,10 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from Database.database_update import user_insert
 
 
-class SellerSignupGUI(object):
+class SignupGUI(object):
     def __init__(self, conn, MainWindow):
         self.conn = conn
+        self.type = "Customer"
         self.mainform = MainWindow
         self.setupUi(MainWindow)
 
@@ -114,14 +115,14 @@ class SellerSignupGUI(object):
                                       "background: rgb(243, 76, 83);\n"
                                       "font-size: 20px;")
         self.btn_Signup.setObjectName("btn_Signup")
-        self.btn_Seller = QtWidgets.QPushButton(self.frm_Signup)
-        self.btn_Seller.setGeometry(QtCore.QRect(340, 660, 291, 51))
-        self.btn_Seller.setStyleSheet("border: none;\n"
+        self.btn_Switch = QtWidgets.QPushButton(self.frm_Signup)
+        self.btn_Switch.setGeometry(QtCore.QRect(340, 660, 291, 51))
+        self.btn_Switch.setStyleSheet("border: none;\n"
                                       "border-radius: 15px;\n"
                                       "background: #222;\n"
                                       "color: white;\n"
                                       "font-size: 20px;")
-        self.btn_Seller.setObjectName("btn_Seller")
+        self.btn_Switch.setObjectName("btn_Switch")
         self.txt_Phone = QtWidgets.QLineEdit(self.frm_Signup)
         self.txt_Phone.setGeometry(QtCore.QRect(380, 340, 241, 31))
         self.txt_Phone.setFocusPolicy(QtCore.Qt.ClickFocus)
@@ -145,14 +146,66 @@ class SellerSignupGUI(object):
         self.txt_Phone.returnPressed.connect(self.txt_Pass.setFocus)
         self.txt_Pass.returnPressed.connect(self.txt_PassConfirm.setFocus)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        self.userFunctions(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Seller Signup"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Customer Signup"))
         self.lbl_Pass.setText(_translate("MainWindow", "Password"))
         self.lbl_Email.setText(_translate("MainWindow", "E-Mail"))
         self.lbl_Fname.setText(_translate("MainWindow", "Full Name"))
         self.lbl_PassConfirm.setText(_translate("MainWindow", "Confirm Password"))
         self.btn_Signup.setText(_translate("MainWindow", "Signup"))
-        self.btn_Seller.setText(_translate("MainWindow", "Sign up as a seller"))
+        self.btn_Switch.setText(_translate("MainWindow", "Sign up as a seller"))
         self.lbl_Phone.setText(_translate("MainWindow", "Phone Number"))
+
+    def userFunctions(self, MainWindow):
+        self.btn_Signup.clicked.connect(lambda: self.signupPressed())
+        self.btn_Switch.clicked.connect(lambda: self.switchPressed(MainWindow))
+        #self.btn_Signup.clicked.connect(MainWindow.hide)
+
+    def signupPressed(self):
+        fullname = self.txt_Fname.text()
+        email = self.txt_SelEmail.text()
+        password = self.txt_Pass.text()
+        phone = self.txt_Phone.text()
+        confirm_password = self.txt_PassConfirm.text()
+        if fullname == '' or email == '' or password == '' or confirm_password == '' or phone == '':
+            pass
+        elif password != confirm_password:
+            self.createMessageBox("Password Mismatch", "Password and Confirm password does not match")
+        else:
+            user = self.signupUser(fullname, email, password, phone)
+            if user != -1:
+                self.mainformOpen(user)
+
+    def signupUser(self, user_name, email, password, phone):
+        user_id = randint(100000000, 999999999)
+        password = pbkdf2_sha256.hash(password)
+        user_info = (user_id, user_name, email, password, phone, self.type)
+        result = user_insert(self.conn, user_info)
+        if result == -1:
+            self.createMessageBox("Error Occured", "Signup unsuccessful.\nPlease try again!")
+            return result
+        return result[0]
+
+    def mainformOpen(self, user):
+        pass
+
+    def switchPressed(self, MainWindow):
+        if self.type == 'Customer':
+            self.type = 'Seller'
+            MainWindow.setWindowTitle("Seller Signup")
+            self.btn_Switch.setText("Sign up as a customer")
+        else:
+            self.type = 'Customer'
+            MainWindow.setWindowTitle("Customer Signup")
+            self.btn_Switch.setText("Sign up as a seller")
+
+    def createMessageBox(self, title, message):
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Critical)
+        msg.setWindowTitle(title)
+        msg.setWindowIcon(self.icon)
+        msg.setText(message)
+        msg.exec()
