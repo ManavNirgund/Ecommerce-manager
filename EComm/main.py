@@ -1,8 +1,9 @@
 import sys
 import sqlite3
 from sqlite3 import Error
-from PyQt5 import QtWidgets
+from PyQt5 import QtWidgets, uic
 from GUI.login_screen import LoginScreenGUI
+from GUI.signup_screen import SignupGUI
 from Database.database_create import create_default_tables
 
 
@@ -24,12 +25,12 @@ def create_connection(db_file):
     return conn
 
 
-'''
-def showLogin():
-    win = uic.loadUi("GUI/login_screen.ui")
+
+'''def showLogin():
+    win = uic.loadUi("GUI/customerwindow.ui")
     win.show()
-    return win
-'''
+    return win'''
+
 
 if __name__ == "__main__":
     if not QtWidgets.QApplication.instance():
@@ -39,6 +40,6 @@ if __name__ == "__main__":
 
     mainform = QtWidgets.QMainWindow()
     db_conn = create_connection('ecomm.sql')
-    ui = LoginScreenGUI(db_conn, mainform)
+    ui = SignupGUI(db_conn, mainform)
     mainform.show()
     sys.exit(app.exec())
