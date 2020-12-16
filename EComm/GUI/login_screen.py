@@ -3,7 +3,6 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 from GUI.signup_screen import SignupGUI
 from Database.database_queries import verify_user
-from Database.database_update import user_insert
 
 
 class LoginScreenGUI(object):
@@ -98,10 +97,7 @@ class LoginScreenGUI(object):
                                      "font-size: 25px;")
         self.btn_Login.setCheckable(True)
         self.btn_Login.setObjectName("btn_Login")
-
         self.retranslateUi(MainWindow)
-        self.txt_Email.returnPressed.connect(self.txt_Pass.setFocus)
-        self.txt_Pass.returnPressed.connect(self.btn_Login.setFocus)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         self.userFunctions(MainWindow)
 
@@ -116,37 +112,72 @@ class LoginScreenGUI(object):
         self.btn_Login.setText(_translate("MainWindow", "Login"))
 
     def userFunctions(self, MainWindow):
+        """
+        UserFunctions to handle the MainWindow.
+        Connects the action events of window elements to respective functions.
+
+        Parameter:
+            MainWindow: the mainwindow object.
+        """
+
+        self.txt_Pass.returnPressed.connect(self.btn_Login.setFocus)
+        self.txt_Email.returnPressed.connect(self.txt_Pass.setFocus)
         self.btn_Login.clicked.connect(lambda: self.loginPressed())
         self.btn_Signup.clicked.connect(lambda: self.openSignupForm())
         self.btn_Signup.clicked.connect(MainWindow.hide)
 
     def loginPressed(self):
+        """
+        Function to handel when Login Button Pressed.
+        Checks the email, password and verifies the user.
+        Logs in the user if verified, if not, then shows appropriate error message.
+        """
+
         email = self.txt_Email.text()
         password = self.txt_Pass.text()
         if email != '' and password != '':
             result = verify_user(self.conn, email, password)
             if result == "Incorrect Password":
                 self.createMessageBox("Invalid Password", "Please try again")
+                self.txt_Pass.setFocus()
             elif result == "No Record Found":
                 self.createMessageBox("Invalid User", "No User Found.\nEmail is not registered.")
+                self.txt_Email.setFocus()
             else:
                 self.openMainForm(result)
 
     def openMainForm(self, result):
+        """
+        Creates a QMainWindow and opens the corresponding Mainform
+        according to the type of User.
+        """
+
         print(result)
-        self.mainform = QtWidgets.QMainWindow()
+        '''self.mainform = QtWidgets.QMainWindow()
         if result[-1] == 'Customer':
             CustomerMainformGUI(self.conn, self.mainform, result[0])
         elif result[-1] == 'Seller':
             SellerMainformGUI(self.conn, self.mainform, result[0])
-        self.mainform.show()
+        self.mainform.show()'''
 
     def openSignupForm(self):
+        """
+        Creates a QMainWindow and opens the SignupGUI form.
+        """
+
         self.mainform = QtWidgets.QMainWindow()
         SignupGUI(self.conn, self.mainform)
         self.mainform.show()
 
     def createMessageBox(self, title, message):
+        """
+        Creates a QMessageBox with the passed parameters.
+
+        Parameter:
+            title: the title of the message box
+            message: the message in the message box
+        """
+
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Critical)
         msg.setWindowTitle(title)

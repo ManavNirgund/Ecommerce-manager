@@ -4,6 +4,7 @@ from sqlite3 import Error
 from PyQt5 import QtWidgets
 from GUI.login_screen import LoginScreenGUI
 from Database.database_create import create_default_tables
+from Database.database_queries import get_all_address
 
 
 def create_connection(db_file):
@@ -14,14 +15,13 @@ def create_connection(db_file):
     Returns:
         conn: Connection object or None
     """
-    conn = None
     try:
         conn = sqlite3.connect(db_file)
         create_default_tables(conn)
         return conn
     except Error as e:
         print(e)
-    return conn
+        return None
 
 
 '''

@@ -16,11 +16,11 @@ def user_insert(conn, user_info):
         cur = conn.cursor()
         cur.execute(sql, user_info)
 
-        if user_info[-1] == "seller":
+        if user_info[-1] == "Seller":
             sql = f" INSERT into seller(user_id) VALUES ({user_info[0]}) "
             cur = conn.cursor()
             cur.execute(sql)
-        elif user_info[-1] == "customer":
+        elif user_info[-1] == "Customer":
             sql = f" INSERT into customer(user_id) VALUES ({user_info[0]}) "
             cur = conn.cursor()
             cur.execute(sql)
@@ -29,7 +29,7 @@ def user_insert(conn, user_info):
         return cur.lastrowid
     except Error as e:
         print(e)
-        return -1
+        return str(e)
 
 
 def user_update(conn, user_info):
@@ -52,7 +52,7 @@ def user_update(conn, user_info):
         return cur.lastrowid
     except Error as e:
         print(e)
-        return -1
+        return str(e)
 
 
 def seller_update(conn, seller_info):
@@ -73,7 +73,7 @@ def seller_update(conn, seller_info):
         return cur.lastrowid
     except Error as e:
         print(e)
-        return -1
+        return str(e)
 
 
 def customer_update(conn, customer_info):
@@ -94,7 +94,7 @@ def customer_update(conn, customer_info):
         return cur.lastrowid
     except Error as e:
         print(e)
-        return -1
+        return str(e)
 
 
 def payment_insert(conn, payment_info):
@@ -113,7 +113,7 @@ def payment_insert(conn, payment_info):
         return cur.lastrowid
     except Error as e:
         print(e)
-        return -1
+        return str(e)
 
 
 def payment_update(conn, payment_info):
@@ -134,7 +134,7 @@ def payment_update(conn, payment_info):
         return cur.lastrowid
     except Error as e:
         print(e)
-        return -1
+        return str(e)
 
 
 def bank_detail_insert(conn, bank_info):
@@ -153,7 +153,7 @@ def bank_detail_insert(conn, bank_info):
         return cur.lastrowid
     except Error as e:
         print(e)
-        return -1
+        return str(e)
 
 
 def bank_detail_update(conn, bank_info):
@@ -174,7 +174,7 @@ def bank_detail_update(conn, bank_info):
         return cur.lastrowid
     except Error as e:
         print(e)
-        return -1
+        return str(e)
 
 
 def address_insert(conn, address_info):
@@ -193,7 +193,7 @@ def address_insert(conn, address_info):
         return cur.lastrowid
     except Error as e:
         print(e)
-        return -1
+        return str(e)
 
 
 def address_update(conn, address_info):
@@ -216,7 +216,7 @@ def address_update(conn, address_info):
         return cur.lastrowid
     except Error as e:
         print(e)
-        return -1
+        return str(e)
 
 
 def category_insert(conn, category_info):
@@ -235,7 +235,7 @@ def category_insert(conn, category_info):
         return cur.lastrowid
     except Error as e:
         print(e)
-        return -1
+        return str(e)
 
 
 def category_update(conn, category_info):
@@ -257,7 +257,7 @@ def category_update(conn, category_info):
         return cur.lastrowid
     except Error as e:
         print(e)
-        return -1
+        return str(e)
 
 
 def product_insert(conn, product_info):
@@ -277,7 +277,7 @@ def product_insert(conn, product_info):
         return cur.lastrowid
     except Error as e:
         print(e)
-        return -1
+        return str(e)
 
 
 def product_update(conn, product_info):
@@ -303,7 +303,7 @@ def product_update(conn, product_info):
         return cur.lastrowid
     except Error as e:
         print(e)
-        return -1
+        return str(e)
 
 
 def cart_insert(conn, cart_info):
@@ -322,7 +322,7 @@ def cart_insert(conn, cart_info):
         return cur.lastrowid
     except Error as e:
         print(e)
-        return -1
+        return str(e)
 
 
 def cart_update(conn, cart_info):
@@ -343,7 +343,7 @@ def cart_update(conn, cart_info):
         return cur.lastrowid
     except Error as e:
         print(e)
-        return -1
+        return str(e)
 
 
 def wishlist_insert(conn, wishlist_info):
@@ -362,7 +362,7 @@ def wishlist_insert(conn, wishlist_info):
         return cur.lastrowid
     except Error as e:
         print(e)
-        return -1
+        return str(e)
 
 
 def order_insert(conn, order_info):
@@ -381,7 +381,7 @@ def order_insert(conn, order_info):
         return cur.lastrowid
     except Error as e:
         print(e)
-        return -1
+        return str(e)
 
 
 def order_update(conn, order_info):
@@ -404,7 +404,7 @@ def order_update(conn, order_info):
         return cur.lastrowid
     except Error as e:
         print(e)
-        return -1
+        return str(e)
 
 
 def order_details_insert(conn, order_details_info):
@@ -424,7 +424,7 @@ def order_details_insert(conn, order_details_info):
         return cur.lastrowid
     except Error as e:
         print(e)
-        return -1
+        return str(e)
 
 
 def order_details_update(conn, order_details_info):
@@ -448,4 +448,4 @@ def order_details_update(conn, order_details_info):
         return cur.lastrowid
     except Error as e:
         print(e)
-        return -1
+        return str(e)

@@ -52,43 +52,43 @@ class SignupGUI(object):
                                     "font-size: 20px;")
         self.txt_Pass.setObjectName("txt_Pass")
         self.txt_Pass.setEchoMode(QtWidgets.QLineEdit.Password)
-        self.txt_SelEmail = QtWidgets.QLineEdit(self.frm_Signup)
-        self.txt_SelEmail.setGeometry(QtCore.QRect(380, 270, 241, 31))
-        self.txt_SelEmail.setFocusPolicy(QtCore.Qt.ClickFocus)
-        self.txt_SelEmail.setStyleSheet("border: 2px solid rgb(243, 76, 83);\n"
-                                        "border-radius: 15px;\n"
-                                        "padding-left: 10px;\n"
-                                        "padding-bottom: 1px;\n"
-                                        "color: white;\n"
-                                        "font-size: 20px;")
-        self.txt_SelEmail.setObjectName("txt_SelEmail")
+        self.txt_Email = QtWidgets.QLineEdit(self.frm_Signup)
+        self.txt_Email.setGeometry(QtCore.QRect(380, 270, 241, 31))
+        self.txt_Email.setFocusPolicy(QtCore.Qt.ClickFocus)
+        self.txt_Email.setStyleSheet("border: 2px solid rgb(243, 76, 83);\n"
+                                     "border-radius: 15px;\n"
+                                     "padding-left: 10px;\n"
+                                     "padding-bottom: 1px;\n"
+                                     "color: white;\n"
+                                     "font-size: 20px;")
+        self.txt_Email.setObjectName("txt_Email")
         self.lbl_Pass = QtWidgets.QLabel(self.frm_Signup)
         self.lbl_Pass.setGeometry(QtCore.QRect(230, 410, 111, 31))
         self.lbl_Pass.setStyleSheet("color: white;\n"
                                     "font-size: 20px;")
-        self.lbl_Pass.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.lbl_Pass.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.lbl_Pass.setObjectName("lbl_Pass")
         self.lbl_Email = QtWidgets.QLabel(self.frm_Signup)
         self.lbl_Email.setGeometry(QtCore.QRect(230, 270, 111, 31))
         self.lbl_Email.setStyleSheet("color: white;\n"
                                      "font-size: 20px;")
-        self.lbl_Email.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.lbl_Email.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.lbl_Email.setObjectName("lbl_Email")
         self.lbl_Fname = QtWidgets.QLabel(self.frm_Signup)
         self.lbl_Fname.setGeometry(QtCore.QRect(220, 200, 121, 31))
         self.lbl_Fname.setStyleSheet("color: white;\n"
                                      "font-size: 20px;")
-        self.lbl_Fname.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.lbl_Fname.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.lbl_Fname.setObjectName("lbl_Fname")
         self.txt_Fname = QtWidgets.QLineEdit(self.frm_Signup)
         self.txt_Fname.setGeometry(QtCore.QRect(380, 200, 241, 31))
         self.txt_Fname.setFocusPolicy(QtCore.Qt.StrongFocus)
         self.txt_Fname.setStyleSheet("border: 2px solid rgb(243, 76, 83);\n"
-                                    "border-radius: 15px;\n"
-                                    "padding-left: 10px;\n"
-                                    "padding-bottom: 1px;\n"
-                                    "color: white;\n"
-                                    "font-size: 20px;")
+                                     "border-radius: 15px;\n"
+                                     "padding-left: 10px;\n"
+                                     "padding-bottom: 1px;\n"
+                                     "color: white;\n"
+                                     "font-size: 20px;")
         self.txt_Fname.setText("")
         self.txt_Fname.setObjectName("lineEdit")
         self.txt_PassConfirm = QtWidgets.QLineEdit(self.frm_Signup)
@@ -106,7 +106,7 @@ class SignupGUI(object):
         self.lbl_PassConfirm.setGeometry(QtCore.QRect(180, 480, 161, 31))
         self.lbl_PassConfirm.setStyleSheet("color: white;\n"
                                            "font-size: 20px;")
-        self.lbl_PassConfirm.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.lbl_PassConfirm.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.lbl_PassConfirm.setObjectName("lbl_PassConfirm")
         self.btn_Signup = QtWidgets.QPushButton(self.frm_Signup)
         self.btn_Signup.setGeometry(QtCore.QRect(390, 580, 191, 51))
@@ -137,14 +137,9 @@ class SignupGUI(object):
         self.lbl_Phone.setGeometry(QtCore.QRect(210, 340, 131, 31))
         self.lbl_Phone.setStyleSheet("color: white;\n"
                                      "font-size: 20px;")
-        self.lbl_Phone.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.lbl_Phone.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.lbl_Phone.setObjectName("lbl_Phone")
-
         self.retranslateUi(MainWindow)
-        self.txt_Fname.returnPressed.connect(self.txt_SelEmail.setFocus)
-        self.txt_SelEmail.returnPressed.connect(self.txt_Phone.setFocus)
-        self.txt_Phone.returnPressed.connect(self.txt_Pass.setFocus)
-        self.txt_Pass.returnPressed.connect(self.txt_PassConfirm.setFocus)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         self.userFunctions(MainWindow)
 
@@ -160,37 +155,67 @@ class SignupGUI(object):
         self.lbl_Phone.setText(_translate("MainWindow", "Phone Number"))
 
     def userFunctions(self, MainWindow):
+        self.txt_Fname.returnPressed.connect(self.txt_Email.setFocus)
+        self.txt_Email.returnPressed.connect(self.txt_Phone.setFocus)
+        self.txt_Phone.returnPressed.connect(self.txt_Pass.setFocus)
+        self.txt_Pass.returnPressed.connect(self.txt_PassConfirm.setFocus)
+
         self.btn_Signup.clicked.connect(lambda: self.signupPressed())
         self.btn_Switch.clicked.connect(lambda: self.switchPressed(MainWindow))
-        #self.btn_Signup.clicked.connect(MainWindow.hide)
+        # self.btn_Signup.clicked.connect(MainWindow.hide)
 
     def signupPressed(self):
         fullname = self.txt_Fname.text()
-        email = self.txt_SelEmail.text()
+        email = self.txt_Email.text()
         password = self.txt_Pass.text()
         phone = self.txt_Phone.text()
         confirm_password = self.txt_PassConfirm.text()
-        if fullname == '' or email == '' or password == '' or confirm_password == '' or phone == '':
-            pass
+
+        if fullname == '':
+            self.txt_Fname.setFocus()
+        elif email == '':
+            self.txt_Email.setFocus()
+        elif password == '':
+            self.txt_Pass.setFocus()
+        elif confirm_password == '':
+            self.txt_PassConfirm.setFocus()
+        elif phone == '':
+            self.txt_Phone.setFocus()
         elif password != confirm_password:
             self.createMessageBox("Password Mismatch", "Password and Confirm password does not match")
+            self.txt_Pass.setText('')
+            self.txt_PassConfirm.setText('')
+            self.txt_Pass.setFocus()
         else:
-            user = self.signupUser(fullname, email, password, phone)
-            if user != -1:
-                self.mainformOpen(user)
+            user_id = self.signupUser(fullname, email, password, phone)
+            print(user_id)
+            # self.mainformOpen(user_id)
 
     def signupUser(self, user_name, email, password, phone):
         user_id = randint(100000000, 999999999)
         password = pbkdf2_sha256.hash(password)
         user_info = (user_id, user_name, email, password, phone, self.type)
-        result = user_insert(self.conn, user_info)
-        if result == -1:
-            self.createMessageBox("Error Occured", "Signup unsuccessful.\nPlease try again!")
-            return result
-        return result[0]
 
-    def mainformOpen(self, user):
+        result = user_insert(self.conn, user_info)
+
+        if type(result) != int:
+            if result == 'UNIQUE constraint failed: user.email':
+                self.createMessageBox("Error Occured", "The Email is already registered.")
+            elif result == 'UNIQUE constraint failed: user.phone':
+                self.createMessageBox("Error Occured", "The Phone Number is already registered.")
+            else:
+                self.createMessageBox("Error Occured", "Signup unsuccessful.\nPlease try again!")
+            return -1
+        return user_info[0]
+
+    def mainformOpen(self, user_id):
         pass
+        '''self.mainform = QtWidgets.QMainWindow()
+        if self.type == 'Customer':
+            CustomerMainformGUI(self.conn, self.mainform, result[0])
+        elif self.type == 'Seller':
+            SellerMainformGUI(self.conn, self.mainform, result[0])
+        self.mainform.show()'''
 
     def switchPressed(self, MainWindow):
         if self.type == 'Customer':
@@ -203,6 +228,14 @@ class SignupGUI(object):
             self.btn_Switch.setText("Sign up as a seller")
 
     def createMessageBox(self, title, message):
+        """
+        Creates a QMessageBox with the passed parameters.
+
+        Parameter:
+            title: the title of the message box
+            message: the message in the message box
+        """
+
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Critical)
         msg.setWindowTitle(title)
