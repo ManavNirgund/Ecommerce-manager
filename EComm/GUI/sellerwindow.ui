@@ -1,0 +1,1138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1600</width>
+    <height>900</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>depot</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normalon>../Resources/Icons/icon.png</normalon>
+   </iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">*{background: rgb(69, 69, 69);
+color: rgb(200, 200, 200);
+font-size: 20px;}
+
+QFrame, QWdiget, QPushButton, QComboBox {border: none;}
+
+QLineEdit {
+	border: 2px solid rgb(243, 76, 83);
+	border-radius: 20px;
+} </string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QFrame" name="frm_SellerWindow">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QFrame" name="frm_NavBar">
+       <property name="geometry">
+        <rect>
+         <x>382</x>
+         <y>0</y>
+         <width>1191</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background: rgb(243, 76, 83);
+color: rgb(69, 69, 69);</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QLineEdit" name="txt_SearchBar">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>5</y>
+          <width>600</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius: 15px;
+padding-left: 10px;
+background: rgb(200, 200, 200);
+</string>
+        </property>
+        <property name="placeholderText">
+         <string>Search</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton">
+        <property name="geometry">
+         <rect>
+          <x>1130</x>
+          <y>0</y>
+          <width>100</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none;
+ background: rgba(0, 0, 0, 0);
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_2">
+        <property name="geometry">
+         <rect>
+          <x>1250</x>
+          <y>0</y>
+          <width>100</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none;
+ background: rgba(0, 0, 0, 0);
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QFrame" name="frm_Divider">
+       <property name="geometry">
+        <rect>
+         <x>370</x>
+         <y>54</y>
+         <width>1</width>
+         <height>821</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-radius: 1px;
+background: rgb(200, 200, 200);</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+      </widget>
+      <widget class="QFrame" name="frm_Divider_2">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>130</y>
+         <width>300</width>
+         <height>1</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-radius: 1px;
+background: rgb(200, 200, 200);</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+      </widget>
+      <widget class="QFrame" name="frm_Divider_3">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>490</y>
+         <width>300</width>
+         <height>1</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-radius: 1px;
+background: rgb(200, 200, 200);</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_Accounts">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>350</y>
+         <width>81</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::WheelFocus</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: none;</string>
+       </property>
+       <property name="text">
+        <string>Accounts</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_Edit">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>240</y>
+         <width>93</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::WheelFocus</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: none;</string>
+       </property>
+       <property name="text">
+        <string>Edit</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_Home">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>90</y>
+         <width>93</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: none;</string>
+       </property>
+       <property name="text">
+        <string>Home</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_Add">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>200</y>
+         <width>93</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::WheelFocus</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: none;</string>
+       </property>
+       <property name="text">
+        <string>Add</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lbl_Sell">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>160</y>
+         <width>55</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(150, 150, 150);</string>
+       </property>
+       <property name="text">
+        <string>Sell</string>
+       </property>
+      </widget>
+      <widget class="QFrame" name="frm_Divider_4">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>280</y>
+         <width>300</width>
+         <height>1</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-radius: 1px;
+background: rgb(200, 200, 200);</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lbl_Sell_2">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>310</y>
+         <width>55</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(150, 150, 150);</string>
+       </property>
+       <property name="text">
+        <string>Seller</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_BankDetails">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>400</y>
+         <width>111</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::WheelFocus</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: none;</string>
+       </property>
+       <property name="text">
+        <string>Bank Details</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_Address">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>450</y>
+         <width>71</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::WheelFocus</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: none;</string>
+       </property>
+       <property name="text">
+        <string>Address</string>
+       </property>
+      </widget>
+      <widget class="QStackedWidget" name="stackedWidget">
+       <property name="geometry">
+        <rect>
+         <x>380</x>
+         <y>60</y>
+         <width>1191</width>
+         <height>821</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="currentIndex">
+        <number>4</number>
+       </property>
+       <widget class="QWidget" name="Home">
+        <widget class="QFrame" name="frm_Home">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>1191</width>
+           <height>811</height>
+          </rect>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <widget class="QGroupBox" name="grp_UpAndRunning">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>-1</y>
+            <width>787</width>
+            <height>811</height>
+           </rect>
+          </property>
+          <property name="title">
+           <string>Up and Running</string>
+          </property>
+          <widget class="QListWidget" name="listWidget">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>30</y>
+             <width>771</width>
+             <height>771</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QGroupBox" name="grp_Analytics">
+          <property name="geometry">
+           <rect>
+            <x>801</x>
+            <y>0</y>
+            <width>380</width>
+            <height>811</height>
+           </rect>
+          </property>
+          <property name="title">
+           <string>Analytics</string>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="Add">
+        <widget class="QFrame" name="frm_Add">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>1191</width>
+           <height>811</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">#frm_Add{ border: 1px solid rgb(200, 200, 200);}</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <widget class="QPushButton" name="btn_BrowseImage">
+          <property name="geometry">
+           <rect>
+            <x>220</x>
+            <y>321</y>
+            <width>200</width>
+            <height>35</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background: rgb(130, 130, 130);
+border-radius: 10px</string>
+          </property>
+          <property name="text">
+           <string>Browse Image</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lbl_Cost">
+          <property name="geometry">
+           <rect>
+            <x>40</x>
+            <y>421</y>
+            <width>100</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="toolTip">
+           <string>Add an Image to Accentuate your product</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: none;</string>
+          </property>
+          <property name="text">
+           <string>Cost</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lbl_Descrption">
+          <property name="geometry">
+           <rect>
+            <x>40</x>
+            <y>571</y>
+            <width>100</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="toolTip">
+           <string>Add an Image to Accentuate your product</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: none;</string>
+          </property>
+          <property name="text">
+           <string>Description</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btn_AddCancel">
+          <property name="geometry">
+           <rect>
+            <x>565</x>
+            <y>741</y>
+            <width>200</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-left: 1px solid rgb(243, 76, 83);
+ border-radius: 10px;
+ background: rgb(130, 130, 130);
+</string>
+          </property>
+          <property name="text">
+           <string>Clear</string>
+          </property>
+         </widget>
+         <widget class="QTextEdit" name="textEdit">
+          <property name="geometry">
+           <rect>
+            <x>220</x>
+            <y>541</y>
+            <width>411</width>
+            <height>161</height>
+           </rect>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::ClickFocus</enum>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: 2px solid rgb(243, 76, 83);
+border-radius: 20px;
+padding: 10px;
+</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lbl_PixMap">
+          <property name="geometry">
+           <rect>
+            <x>220</x>
+            <y>116</y>
+            <width>200</width>
+            <height>200</height>
+           </rect>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::TabFocus</enum>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: 2px solid rgb(243, 76, 83);
+border-radius: 15px;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="txt_ProductName">
+          <property name="geometry">
+           <rect>
+            <x>220</x>
+            <y>31</y>
+            <width>400</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: 2px solid rgb(243, 76, 83);
+border-radius: 20px;
+padding-left: 10px;
+padding-right: 10px;</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lbl_ProductName">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>30</y>
+            <width>171</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Product Name</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btn_AddOK">
+          <property name="geometry">
+           <rect>
+            <x>368</x>
+            <y>741</y>
+            <width>200</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-right: 1px solid rgb(243, 76, 83);
+ border-radius: 10px;
+ background: rgb(130, 130, 130);
+</string>
+          </property>
+          <property name="text">
+           <string>OK</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lbl_Image">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>196</y>
+            <width>100</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="toolTip">
+           <string>Add an Image to Accentuate your product</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: none;</string>
+          </property>
+          <property name="text">
+           <string>Image</string>
+          </property>
+         </widget>
+         <widget class="QDoubleSpinBox" name="dspb_Cost">
+          <property name="geometry">
+           <rect>
+            <x>220</x>
+            <y>411</y>
+            <width>151</width>
+            <height>43</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: 2px solid rgb(243, 76, 83);
+border-radius: 20px;
+padding: 2px;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="buttonSymbols">
+           <enum>QAbstractSpinBox::NoButtons</enum>
+          </property>
+          <property name="prefix">
+           <string>Rs. </string>
+          </property>
+          <property name="suffix">
+           <string>/-</string>
+          </property>
+          <property name="maximum">
+           <double>1000000.000000000000000</double>
+          </property>
+          <property name="stepType">
+           <enum>QAbstractSpinBox::DefaultStepType</enum>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="pg_Accounts">
+        <widget class="QFrame" name="frm_Accounts">
+         <property name="geometry">
+          <rect>
+           <x>9</x>
+           <y>-1</y>
+           <width>1201</width>
+           <height>821</height>
+          </rect>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <widget class="QListWidget" name="listWidget_2">
+          <property name="geometry">
+           <rect>
+            <x>5</x>
+            <y>0</y>
+            <width>1171</width>
+            <height>811</height>
+           </rect>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="pg_BankDetails">
+        <widget class="QFrame" name="frame">
+         <property name="geometry">
+          <rect>
+           <x>9</x>
+           <y>-1</y>
+           <width>1181</width>
+           <height>821</height>
+          </rect>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <widget class="QLabel" name="lbl_AccountName">
+          <property name="geometry">
+           <rect>
+            <x>90</x>
+            <y>70</y>
+            <width>131</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Account Name</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lbl_BankName">
+          <property name="geometry">
+           <rect>
+            <x>90</x>
+            <y>210</y>
+            <width>131</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Bank Name</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lbl_AccountNumber">
+          <property name="geometry">
+           <rect>
+            <x>90</x>
+            <y>340</y>
+            <width>151</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Account Number</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lbl_IFSC">
+          <property name="geometry">
+           <rect>
+            <x>90</x>
+            <y>470</y>
+            <width>131</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>IFSC Code</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lbl_Wallet">
+          <property name="geometry">
+           <rect>
+            <x>90</x>
+            <y>600</y>
+            <width>131</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Add To Wallet</string>
+          </property>
+         </widget>
+         <widget class="QComboBox" name="cmbx_BankName">
+          <property name="geometry">
+           <rect>
+            <x>320</x>
+            <y>200</y>
+            <width>200</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>26</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: 2px solid rgb(243, 76, 83);
+border-radius: 10px;</string>
+          </property>
+          <property name="currentText">
+           <string/>
+          </property>
+          <property name="sizeAdjustPolicy">
+           <enum>QComboBox::AdjustToContents</enum>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="txt_AccountName">
+          <property name="geometry">
+           <rect>
+            <x>310</x>
+            <y>60</y>
+            <width>400</width>
+            <height>41</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="txt_AccountNumber">
+          <property name="geometry">
+           <rect>
+            <x>310</x>
+            <y>330</y>
+            <width>391</width>
+            <height>41</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="txt_IFSC">
+          <property name="geometry">
+           <rect>
+            <x>320</x>
+            <y>460</y>
+            <width>381</width>
+            <height>41</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="txt_Wallet">
+          <property name="geometry">
+           <rect>
+            <x>310</x>
+            <y>590</y>
+            <width>381</width>
+            <height>41</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btn_BankCancel">
+          <property name="geometry">
+           <rect>
+            <x>607</x>
+            <y>730</y>
+            <width>200</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-left: 1px solid rgb(243, 76, 83);
+ border-radius: 10px;
+ background: rgb(130, 130, 130);
+</string>
+          </property>
+          <property name="text">
+           <string>Clear</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btn_BankOK">
+          <property name="geometry">
+           <rect>
+            <x>410</x>
+            <y>730</y>
+            <width>200</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-right: 1px solid rgb(243, 76, 83);
+ border-radius: 10px;
+ background: rgb(130, 130, 130);
+</string>
+          </property>
+          <property name="text">
+           <string>OK</string>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="page">
+        <widget class="QFrame" name="frame_3">
+         <property name="geometry">
+          <rect>
+           <x>9</x>
+           <y>-1</y>
+           <width>1191</width>
+           <height>821</height>
+          </rect>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <widget class="QLabel" name="lbl_HouseNumber">
+          <property name="geometry">
+           <rect>
+            <x>90</x>
+            <y>60</y>
+            <width>171</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>House/Building No.</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="txt_HouseNumber">
+          <property name="geometry">
+           <rect>
+            <x>290</x>
+            <y>60</y>
+            <width>400</width>
+            <height>41</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lbl_Line_1">
+          <property name="geometry">
+           <rect>
+            <x>100</x>
+            <y>180</y>
+            <width>101</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Line1</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="txt_line_1">
+          <property name="geometry">
+           <rect>
+            <x>290</x>
+            <y>180</y>
+            <width>400</width>
+            <height>41</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="txt_line_2">
+          <property name="geometry">
+           <rect>
+            <x>290</x>
+            <y>300</y>
+            <width>400</width>
+            <height>41</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="txt_line_3">
+          <property name="geometry">
+           <rect>
+            <x>290</x>
+            <y>420</y>
+            <width>400</width>
+            <height>41</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lbl_Line_2">
+          <property name="geometry">
+           <rect>
+            <x>100</x>
+            <y>300</y>
+            <width>101</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Line2</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lbl_Line_3">
+          <property name="geometry">
+           <rect>
+            <x>100</x>
+            <y>420</y>
+            <width>101</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Line3</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lbl_Landmark">
+          <property name="geometry">
+           <rect>
+            <x>100</x>
+            <y>540</y>
+            <width>101</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Landamrk</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="txt_line_4">
+          <property name="geometry">
+           <rect>
+            <x>290</x>
+            <y>540</y>
+            <width>400</width>
+            <height>41</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btn_BankCancel_2">
+          <property name="geometry">
+           <rect>
+            <x>680</x>
+            <y>680</y>
+            <width>200</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-left: 1px solid rgb(243, 76, 83);
+ border-radius: 10px;
+ background: rgb(130, 130, 130);
+</string>
+          </property>
+          <property name="text">
+           <string>Clear</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btn_BankOK_2">
+          <property name="geometry">
+           <rect>
+            <x>483</x>
+            <y>680</y>
+            <width>200</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-right: 1px solid rgb(243, 76, 83);
+ border-radius: 10px;
+ background: rgb(130, 130, 130);
+</string>
+          </property>
+          <property name="text">
+           <string>OK</string>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QFrame" name="frame_2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>0</y>
+         <width>361</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background: rgb(51, 51, 51);
+font-size: 25px;</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QLabel" name="label_6">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>15</y>
+          <width>91</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Menu</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btn_BrowseImage</sender>
+   <signal>clicked()</signal>
+   <receiver>dspb_Cost</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>755</x>
+     <y>414</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>723</x>
+     <y>514</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>txt_ProductName</sender>
+   <signal>returnPressed()</signal>
+   <receiver>btn_BrowseImage</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>674</x>
+     <y>138</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>673</x>
+     <y>405</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_Add</sender>
+   <signal>clicked()</signal>
+   <receiver>txt_ProductName</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>138</x>
+     <y>223</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>637</x>
+     <y>123</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
