@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'customerwindow.ui'
+# Form implementation generated from reading ui file '.\customerwindow.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.1
 #
@@ -20,16 +20,16 @@ class CustomerGUI(object):
 
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1600, 900)
+        MainWindow.resize(1600, 949)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(50)
         sizePolicy.setVerticalStretch(50)
         sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
         MainWindow.setSizePolicy(sizePolicy)
-        MainWindow.setMinimumSize(QtCore.QSize(1122, 800))
+        MainWindow.setMinimumSize(QtCore.QSize(1122, 949))
         MainWindow.setMaximumSize(QtCore.QSize(16777215, 16777215))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("./Resources/Icons/icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        icon.addPixmap(QtGui.QPixmap(".\\Resources/Icons/Logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
         MainWindow.setWindowIcon(icon)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -84,7 +84,7 @@ class CustomerGUI(object):
         self.label_4.setGeometry(QtCore.QRect(640, 10, 21, 21))
         self.label_4.setStyleSheet("background: #c8c8c8;")
         self.label_4.setText("")
-        self.label_4.setPixmap(QtGui.QPixmap("./Resources/Icons/Search.png"))
+        self.label_4.setPixmap(QtGui.QPixmap(".\\../Resources/Icons/Search.png"))
         self.label_4.setObjectName("label_4")
         self.frame_9 = QtWidgets.QFrame(self.frm_NavBar)
         self.frame_9.setGeometry(QtCore.QRect(1150, 0, 120, 50))
@@ -109,7 +109,7 @@ class CustomerGUI(object):
         self.label.setStyleSheet("background: rgb(243, 76, 83);\n"
 " ")
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("./Resources/Icons/Accounts.png"))
+        self.label.setPixmap(QtGui.QPixmap(".\\../Resources/Icons/Accounts.png"))
         self.label.setObjectName("label")
         self.frame_10 = QtWidgets.QFrame(self.frm_NavBar)
         self.frame_10.setGeometry(QtCore.QRect(1290, 0, 120, 50))
@@ -134,7 +134,7 @@ class CustomerGUI(object):
         self.label_2.setStyleSheet("background: rgb(243, 76, 83);\n"
 " ")
         self.label_2.setText("")
-        self.label_2.setPixmap(QtGui.QPixmap("./Resources/Icons/Cart.png"))
+        self.label_2.setPixmap(QtGui.QPixmap(".\\../Resources/Icons/Cart.png"))
         self.label_2.setObjectName("label_2")
         self.frame_12 = QtWidgets.QFrame(self.frm_NavBar)
         self.frame_12.setGeometry(QtCore.QRect(1430, 0, 120, 50))
@@ -159,17 +159,17 @@ class CustomerGUI(object):
         self.label_3.setStyleSheet("background: rgb(243, 76, 83);\n"
 " ")
         self.label_3.setText("")
-        self.label_3.setPixmap(QtGui.QPixmap("./Resources/Icons/Wishlist.png"))
+        self.label_3.setPixmap(QtGui.QPixmap(".\\../Resources/Icons/Wishlist.png"))
         self.label_3.setObjectName("label_3")
         self.frm__StoreView = QtWidgets.QFrame(self.frame)
-        self.frm__StoreView.setGeometry(QtCore.QRect(12, 60, 1581, 881))
+        self.frm__StoreView.setGeometry(QtCore.QRect(12, 60, 1581, 891))
         self.frm__StoreView.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.frm__StoreView.setStyleSheet("")
         self.frm__StoreView.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frm__StoreView.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frm__StoreView.setObjectName("frm__StoreView")
         self.frm_ProductPreview = QtWidgets.QFrame(self.frm__StoreView)
-        self.frm_ProductPreview.setGeometry(QtCore.QRect(1, 1, 881, 871))
+        self.frm_ProductPreview.setGeometry(QtCore.QRect(1, 1, 881, 881))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -182,70 +182,65 @@ class CustomerGUI(object):
         self.frm_ProductPreview.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frm_ProductPreview.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frm_ProductPreview.setObjectName("frm_ProductPreview")
-        self.verticalLayout = QtWidgets.QVBoxLayout(self.frm_ProductPreview)
-        self.verticalLayout.setObjectName("verticalLayout")
-        self.scrollArea = QtWidgets.QScrollArea(self.frm_ProductPreview)
-        self.scrollArea.setStyleSheet("")
-        self.scrollArea.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOn)
-        self.scrollArea.setWidgetResizable(True)
-        self.scrollArea.setObjectName("scrollArea")
-        self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 834, 1000))
-        self.scrollAreaWidgetContents.setMinimumSize(QtCore.QSize(0, 1000))
-        self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
-        self.frame_4 = QtWidgets.QFrame(self.scrollAreaWidgetContents)
-        self.frame_4.setGeometry(QtCore.QRect(0, 0, 561, 190))
-        self.frame_4.setStyleSheet("")
-        self.frame_4.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frame_4.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_4.setObjectName("frame_4")
-        self.pushButton_5 = QtWidgets.QPushButton(self.frame_4)
-        self.pushButton_5.setGeometry(QtCore.QRect(190, 60, 371, 47))
-        self.pushButton_5.setStyleSheet("border: none;\n"
+        self.listWidget = QtWidgets.QListWidget(self.frm_ProductPreview)
+        self.listWidget.setGeometry(QtCore.QRect(12, 12, 861, 861))
+#************************************************************************************************************
+        self.listWidget.setStyleSheet("color: rgb(200, 200, 200);\n"                                        #
+        "font-size: 20px;\n")                                                                               #
+        self.listWidget.setObjectName("listWidget")                                                         #
+        self.listWidget.addItem("Search for 'addItem' and look down that's one of the solutions I guess 🤷‍")#
+        self.listWidget.addItem("Or use a plain ol' scroll area")                                           #
+        self.listWidget.addItem("Or use a table view like you said you did in OOPs")                        #
+#************************************************************************************************************
+
+        #******************************************************************
+        self.frm_Product = QtWidgets.QFrame(self.listWidget)              #
+        #******************************************************************
+        self.frm_Product.setGeometry(QtCore.QRect(20, 210, 561, 190))
+        self.frm_Product.setStyleSheet("")
+        self.frm_Product.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frm_Product.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frm_Product.setObjectName("frm_Product")
+        self.btn_ProductCost = QtWidgets.QPushButton(self.frm_Product)
+        self.btn_ProductCost.setGeometry(QtCore.QRect(190, 60, 371, 47))
+        self.btn_ProductCost.setStyleSheet("border: none;\n"
 "background: #444;\n"
 "text-align: left;\n"
 "color: rgb(200, 200, 200);\n"
 "font-size: 25px;\n"
 "")
-        self.pushButton_5.setObjectName("pushButton_5")
-        self.pushButton_6 = QtWidgets.QPushButton(self.frame_4)
-        self.pushButton_6.setGeometry(QtCore.QRect(190, 0, 371, 47))
-        self.pushButton_6.setStyleSheet("border: none;\n"
+        self.btn_ProductCost.setObjectName("btn_ProductCost")
+        self.btn_ProductName = QtWidgets.QPushButton(self.frm_Product)
+        self.btn_ProductName.setGeometry(QtCore.QRect(190, 0, 371, 47))
+        self.btn_ProductName.setStyleSheet("border: none;\n"
 "background: #444;\n"
 "text-align: left;\n"
 "color: rgb(200, 200, 200);\n"
 "font-size: 25px;\n"
 "")
-        self.pushButton_6.setFlat(True)
-        self.pushButton_6.setObjectName("pushButton_6")
-        self.pushButton_7 = QtWidgets.QPushButton(self.frame_4)
-        self.pushButton_7.setGeometry(QtCore.QRect(190, 120, 371, 47))
-        self.pushButton_7.setStyleSheet("border: none;\n"
+        self.btn_ProductName.setFlat(True)
+        self.btn_ProductName.setObjectName("btn_ProductName")
+        self.btn_Seller = QtWidgets.QPushButton(self.frm_Product)
+        self.btn_Seller.setGeometry(QtCore.QRect(190, 120, 371, 47))
+        self.btn_Seller.setStyleSheet("border: none;\n"
 "background: #444;\n"
 "text-align: left;\n"
 "color: rgb(200, 200, 200);\n"
 "font-size: 25px;\n"
 "")
-        self.pushButton_7.setObjectName("pushButton_7")
-        self.pushButton_17 = QtWidgets.QPushButton(self.frame_4)
-        self.pushButton_17.setGeometry(QtCore.QRect(0, 0, 171, 171))
-        self.pushButton_17.setText("")
-        self.pushButton_17.setObjectName("pushButton_17")
-        self.frame_14 = QtWidgets.QFrame(self.frame_4)
-        self.frame_14.setGeometry(QtCore.QRect(50, 180, 500, 2))
-        self.frame_14.setStyleSheet("background: rgb(243, 76, 83);")
-        self.frame_14.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frame_14.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_14.setObjectName("frame_14")
-        self.listWidget = QtWidgets.QListWidget(self.scrollAreaWidgetContents)
-        self.listWidget.setGeometry(QtCore.QRect(0, 0, 831, 851))
-        self.listWidget.setObjectName("listWidget")
-        self.listWidget.raise_()
-        self.frame_4.raise_()
-        self.scrollArea.setWidget(self.scrollAreaWidgetContents)
-        self.verticalLayout.addWidget(self.scrollArea)
+        self.btn_Seller.setObjectName("btn_Seller")
+        self.btn_Image = QtWidgets.QPushButton(self.frm_Product)
+        self.btn_Image.setGeometry(QtCore.QRect(0, 0, 171, 171))
+        self.btn_Image.setText("")
+        self.btn_Image.setObjectName("btn_Image")
+        self.frm_Divider = QtWidgets.QFrame(self.frm_Product)
+        self.frm_Divider.setGeometry(QtCore.QRect(50, 180, 500, 2))
+        self.frm_Divider.setStyleSheet("background: rgb(243, 76, 83);")
+        self.frm_Divider.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frm_Divider.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frm_Divider.setObjectName("frm_Divider")
         self.frm_ProductDescription = QtWidgets.QFrame(self.frm__StoreView)
-        self.frm_ProductDescription.setGeometry(QtCore.QRect(895, 0, 681, 875))
+        self.frm_ProductDescription.setGeometry(QtCore.QRect(895, 0, 681, 881))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -272,6 +267,6 @@ class CustomerGUI(object):
         self.pushButton_22.setText(_translate("MainWindow", "Accounts"))
         self.pushButton_23.setText(_translate("MainWindow", "Cart"))
         self.pushButton_24.setText(_translate("MainWindow", "Wishlist"))
-        self.pushButton_5.setText(_translate("MainWindow", "Product Cost"))
-        self.pushButton_6.setText(_translate("MainWindow", "Product Name"))
-        self.pushButton_7.setText(_translate("MainWindow", "Seller"))
+        self.btn_ProductCost.setText(_translate("MainWindow", "Product Cost"))
+        self.btn_ProductName.setText(_translate("MainWindow", "Product Name"))
+        self.btn_Seller.setText(_translate("MainWindow", "Seller"))
