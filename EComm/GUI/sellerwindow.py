@@ -20,7 +20,7 @@ class SellerGUI(object):
 
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1600, 900)
+        MainWindow.resize(1619, 900)
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("./Resources/Icons/icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
         MainWindow.setWindowIcon(icon)
@@ -28,117 +28,168 @@ class SellerGUI(object):
 "color: rgb(200, 200, 200);\n"
 "font-size: 20px;}\n"
 "\n"
-"QFrame, QWdiget, QPushButton {border: none;}\n"
+"QFrame, QWdiget, QPushButton, QComboBox {border: none;}\n"
 "\n"
-" ")
+"QLineEdit {\n"
+"    border: 2px solid rgb(243, 76, 83);\n"
+"    border-radius: 20px;\n"
+"} ")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
-        self.gridLayout.setObjectName("gridLayout")
         self.frm_SellerWindow = QtWidgets.QFrame(self.centralwidget)
+        self.frm_SellerWindow.setGeometry(QtCore.QRect(11, 11, 1597, 888))
         self.frm_SellerWindow.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frm_SellerWindow.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frm_SellerWindow.setObjectName("frm_SellerWindow")
         self.frm_NavBar = QtWidgets.QFrame(self.frm_SellerWindow)
-        self.frm_NavBar.setGeometry(QtCore.QRect(382, 0, 1191, 51))
+        self.frm_NavBar.setGeometry(QtCore.QRect(0, 0, 1600, 51))
         self.frm_NavBar.setStyleSheet("background: rgb(243, 76, 83);\n"
 "color: rgb(69, 69, 69);")
         self.frm_NavBar.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frm_NavBar.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frm_NavBar.setObjectName("frm_NavBar")
-        self.txt_SearchBar = QtWidgets.QLineEdit(self.frm_NavBar)
-        self.txt_SearchBar.setGeometry(QtCore.QRect(110, 5, 600, 41))
-        self.txt_SearchBar.setStyleSheet("border-radius: 15px;\n"
+        self.frm_SerachbarHolder = QtWidgets.QFrame(self.frm_NavBar)
+        self.frm_SerachbarHolder.setGeometry(QtCore.QRect(400, 5, 671, 41))
+        self.frm_SerachbarHolder.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frm_SerachbarHolder.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frm_SerachbarHolder.setObjectName("frm_SerachbarHolder")
+        self.cmbx_Filter = QtWidgets.QComboBox(self.frm_SerachbarHolder)
+        self.cmbx_Filter.setGeometry(QtCore.QRect(11, 0, 75, 41))
+        self.cmbx_Filter.setMinimumSize(QtCore.QSize(0, 41))
+        self.cmbx_Filter.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.cmbx_Filter.setStyleSheet("border-radius: 10px;\n"
 "padding-left: 10px;\n"
 "background: rgb(200, 200, 200);\n"
+"color: #444;\n"
+"font-size: 18px;\n"
 "")
+        self.cmbx_Filter.setInputMethodHints(QtCore.Qt.ImhNone)
+        self.cmbx_Filter.setSizeAdjustPolicy(QtWidgets.QComboBox.AdjustToContentsOnFirstShow)
+        self.cmbx_Filter.setObjectName("cmbx_Filter")
+        self.cmbx_Filter.addItem("")
+        self.cmbx_Filter.addItem("")
+        self.cmbx_Filter.addItem("")
+        self.cmbx_Filter.addItem("")
+        self.lbl_SearchbarPic = QtWidgets.QLabel(self.frm_SerachbarHolder)
+        self.lbl_SearchbarPic.setGeometry(QtCore.QRect(640, 10, 21, 21))
+        self.lbl_SearchbarPic.setStyleSheet("background: #c8c8c8;")
+        self.lbl_SearchbarPic.setText("")
+        self.lbl_SearchbarPic.setPixmap(QtGui.QPixmap("./Resources/Icons/Search.png"))
+        self.lbl_SearchbarPic.setObjectName("lbl_SearchbarPic")
+        self.txt_SearchBar = QtWidgets.QLineEdit(self.frm_SerachbarHolder)
+        self.txt_SearchBar.setGeometry(QtCore.QRect(80, 0, 591, 41))
+        self.txt_SearchBar.setStyleSheet("border: none;\n"
+"border-radius: 10px;\n"
+"padding-left: 10px;\n"
+"background: rgb(200, 200, 200);\n"
+"color: #444;\n"
+"font-size: 18px;\n"
+"")
+        self.txt_SearchBar.setText("")
         self.txt_SearchBar.setObjectName("txt_SearchBar")
-        self.pushButton = QtWidgets.QPushButton(self.frm_NavBar)
-        self.pushButton.setGeometry(QtCore.QRect(1130, 0, 100, 51))
-        self.pushButton.setStyleSheet("border: none;\n"
-" background: rgba(0, 0, 0, 0);\n"
+        self.txt_SearchBar.raise_()
+        self.cmbx_Filter.raise_()
+        self.lbl_SearchbarPic.raise_()
+        self.frm_NavHome = QtWidgets.QFrame(self.frm_NavBar)
+        self.frm_NavHome.setGeometry(QtCore.QRect(1190, 0, 120, 50))
+        self.frm_NavHome.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frm_NavHome.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frm_NavHome.setObjectName("frm_NavHome")
+        self.frm_Underline_3 = QtWidgets.QFrame(self.frm_NavHome)
+        self.frm_Underline_3.setGeometry(QtCore.QRect(20, 42, 100, 3))
+        self.frm_Underline_3.setStyleSheet("background: rgb(243, 76, 83);")
+        self.frm_Underline_3.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frm_Underline_3.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frm_Underline_3.setObjectName("frm_Underline_3")
+        self.lbl_NavHomePic = QtWidgets.QLabel(self.frm_NavHome)
+        self.lbl_NavHomePic.setGeometry(QtCore.QRect(50, 0, 21, 25))
+        self.lbl_NavHomePic.setStyleSheet("background: rgb(243, 76, 83);\n"
+" ")
+        self.lbl_NavHomePic.setText("")
+        self.lbl_NavHomePic.setPixmap(QtGui.QPixmap("./Resources/Icons/Home.png"))
+        self.lbl_NavHomePic.setObjectName("lbl_NavHomePic")
+        self.lbl_NavHome = QtWidgets.QLabel(self.frm_NavHome)
+        self.lbl_NavHome.setGeometry(QtCore.QRect(30, 25, 71, 16))
+        self.lbl_NavHome.setAlignment(QtCore.Qt.AlignCenter)
+        self.lbl_NavHome.setObjectName("lbl_NavHome")
+        self.frm_NavSell = QtWidgets.QFrame(self.frm_NavBar)
+        self.frm_NavSell.setGeometry(QtCore.QRect(1320, 0, 120, 50))
+        self.frm_NavSell.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frm_NavSell.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frm_NavSell.setObjectName("frm_NavSell")
+        self.frm_Underline_2 = QtWidgets.QFrame(self.frm_NavSell)
+        self.frm_Underline_2.setGeometry(QtCore.QRect(20, 42, 100, 3))
+        self.frm_Underline_2.setStyleSheet("background: rgb(243, 76, 83);")
+        self.frm_Underline_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frm_Underline_2.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frm_Underline_2.setObjectName("frm_Underline_2")
+        self.lbl_NavSellPic = QtWidgets.QLabel(self.frm_NavSell)
+        self.lbl_NavSellPic.setGeometry(QtCore.QRect(50, 2, 21, 21))
+        self.lbl_NavSellPic.setStyleSheet("background: rgb(243, 76, 83);\n"
+" ")
+        self.lbl_NavSellPic.setText("")
+        self.lbl_NavSellPic.setPixmap(QtGui.QPixmap("./Resources/Icons/Sell.png"))
+        self.lbl_NavSellPic.setObjectName("lbl_NavSellPic")
+        self.lbl_NavSell = QtWidgets.QLabel(self.frm_NavSell)
+        self.lbl_NavSell.setGeometry(QtCore.QRect(30, 25, 71, 16))
+        self.lbl_NavSell.setAlignment(QtCore.Qt.AlignCenter)
+        self.lbl_NavSell.setObjectName("lbl_NavSell")
+        self.frm_NavAccount = QtWidgets.QFrame(self.frm_NavBar)
+        self.frm_NavAccount.setGeometry(QtCore.QRect(1450, 0, 120, 50))
+        self.frm_NavAccount.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frm_NavAccount.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frm_NavAccount.setObjectName("frm_NavAccount")
+        self.lbl_NavAccountPic = QtWidgets.QLabel(self.frm_NavAccount)
+        self.lbl_NavAccountPic.setGeometry(QtCore.QRect(50, 0, 21, 25))
+        self.lbl_NavAccountPic.setStyleSheet("background: rgb(243, 76, 83);\n"
+" ")
+        self.lbl_NavAccountPic.setText("")
+        self.lbl_NavAccountPic.setPixmap(QtGui.QPixmap("./Resources/Icons/Accounts.png"))
+        self.lbl_NavAccountPic.setObjectName("lbl_NavAccountPic")
+        self.lbl_NavAccount = QtWidgets.QLabel(self.frm_NavAccount)
+        self.lbl_NavAccount.setGeometry(QtCore.QRect(30, 25, 71, 16))
+        self.lbl_NavAccount.setObjectName("lbl_NavAccount")
+        self.frm_Underline = QtWidgets.QFrame(self.frm_NavAccount)
+        self.frm_Underline.setGeometry(QtCore.QRect(10, 42, 100, 3))
+        self.frm_Underline.setStyleSheet("background: rgb(243, 76, 83);")
+        self.frm_Underline.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frm_Underline.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frm_Underline.setObjectName("frm_Underline")
+        self.btn_NavHome = QtWidgets.QPushButton(self.frm_NavBar)
+        self.btn_NavHome.setGeometry(QtCore.QRect(1190, 0, 120, 50))
+        self.btn_NavHome.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.btn_NavHome.setStyleSheet("#btn_NavHome{background: rgba(0, 0, 0, 0);}\n"
 "")
-        self.pushButton.setText("")
-        self.pushButton.setObjectName("pushButton")
-        self.pushButton_2 = QtWidgets.QPushButton(self.frm_NavBar)
-        self.pushButton_2.setGeometry(QtCore.QRect(1250, 0, 100, 51))
-        self.pushButton_2.setStyleSheet("border: none;\n"
-" background: rgba(0, 0, 0, 0);\n"
-"")
-        self.pushButton_2.setText("")
-        self.pushButton_2.setObjectName("pushButton_2")
-        self.frm_Divider = QtWidgets.QFrame(self.frm_SellerWindow)
-        self.frm_Divider.setGeometry(QtCore.QRect(370, 54, 1, 821))
-        self.frm_Divider.setStyleSheet("border-radius: 1px;\n"
-"background: rgb(200, 200, 200);")
-        self.frm_Divider.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frm_Divider.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frm_Divider.setObjectName("frm_Divider")
-        self.frm_Divider_2 = QtWidgets.QFrame(self.frm_SellerWindow)
-        self.frm_Divider_2.setGeometry(QtCore.QRect(40, 130, 300, 1))
-        self.frm_Divider_2.setStyleSheet("border-radius: 1px;\n"
-"background: rgb(200, 200, 200);")
-        self.frm_Divider_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frm_Divider_2.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frm_Divider_2.setObjectName("frm_Divider_2")
-        self.frm_Divider_3 = QtWidgets.QFrame(self.frm_SellerWindow)
-        self.frm_Divider_3.setGeometry(QtCore.QRect(40, 490, 300, 1))
-        self.frm_Divider_3.setStyleSheet("border-radius: 1px;\n"
-"background: rgb(200, 200, 200);")
-        self.frm_Divider_3.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frm_Divider_3.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frm_Divider_3.setObjectName("frm_Divider_3")
-        self.btn_Accounts = QtWidgets.QPushButton(self.frm_SellerWindow)
-        self.btn_Accounts.setGeometry(QtCore.QRect(80, 350, 81, 20))
-        self.btn_Accounts.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.btn_Accounts.setFocusPolicy(QtCore.Qt.WheelFocus)
-        self.btn_Accounts.setStyleSheet("border: none;")
-        self.btn_Accounts.setObjectName("btn_Accounts")
-        self.btn_Edit = QtWidgets.QPushButton(self.frm_SellerWindow)
-        self.btn_Edit.setGeometry(QtCore.QRect(50, 240, 93, 20))
-        self.btn_Edit.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.btn_Edit.setFocusPolicy(QtCore.Qt.WheelFocus)
-        self.btn_Edit.setStyleSheet("border: none;")
-        self.btn_Edit.setObjectName("btn_Edit")
-        self.btn_Home = QtWidgets.QPushButton(self.frm_SellerWindow)
-        self.btn_Home.setGeometry(QtCore.QRect(50, 90, 93, 20))
-        self.btn_Home.setStyleSheet("border: none;")
-        self.btn_Home.setObjectName("btn_Home")
-        self.btn_Add = QtWidgets.QPushButton(self.frm_SellerWindow)
-        self.btn_Add.setGeometry(QtCore.QRect(50, 200, 93, 20))
-        self.btn_Add.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.btn_Add.setFocusPolicy(QtCore.Qt.WheelFocus)
-        self.btn_Add.setStyleSheet("border: none;")
-        self.btn_Add.setObjectName("btn_Add")
-        self.lbl_Sell = QtWidgets.QLabel(self.frm_SellerWindow)
-        self.lbl_Sell.setGeometry(QtCore.QRect(70, 160, 55, 16))
-        self.lbl_Sell.setStyleSheet("color: rgb(150, 150, 150);")
-        self.lbl_Sell.setObjectName("lbl_Sell")
-        self.frm_Divider_4 = QtWidgets.QFrame(self.frm_SellerWindow)
-        self.frm_Divider_4.setGeometry(QtCore.QRect(40, 280, 300, 1))
-        self.frm_Divider_4.setStyleSheet("border-radius: 1px;\n"
-"background: rgb(200, 200, 200);")
-        self.frm_Divider_4.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frm_Divider_4.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frm_Divider_4.setObjectName("frm_Divider_4")
-        self.lbl_Sell_2 = QtWidgets.QLabel(self.frm_SellerWindow)
-        self.lbl_Sell_2.setGeometry(QtCore.QRect(70, 310, 55, 16))
-        self.lbl_Sell_2.setStyleSheet("color: rgb(150, 150, 150);")
-        self.lbl_Sell_2.setObjectName("lbl_Sell_2")
-        self.btn_BankDetails = QtWidgets.QPushButton(self.frm_SellerWindow)
-        self.btn_BankDetails.setGeometry(QtCore.QRect(80, 400, 111, 20))
-        self.btn_BankDetails.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.btn_BankDetails.setFocusPolicy(QtCore.Qt.WheelFocus)
-        self.btn_BankDetails.setStyleSheet("border: none;")
-        self.btn_BankDetails.setObjectName("btn_BankDetails")
-        self.btn_Address = QtWidgets.QPushButton(self.frm_SellerWindow)
-        self.btn_Address.setGeometry(QtCore.QRect(80, 450, 71, 20))
-        self.btn_Address.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.btn_Address.setFocusPolicy(QtCore.Qt.WheelFocus)
-        self.btn_Address.setStyleSheet("border: none;")
-        self.btn_Address.setObjectName("btn_Address")
+        self.btn_NavHome.setText("")
+        self.btn_NavHome.setObjectName("btn_NavHome")
+        self.btn_NavSell = QtWidgets.QPushButton(self.frm_NavBar)
+        self.btn_NavSell.setGeometry(QtCore.QRect(1320, 0, 120, 50))
+        self.btn_NavSell.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.btn_NavSell.setStyleSheet("#btn_NavSell {background: rgba(0, 0, 0, 0);}\n"
+"\n"
+"QFrame:hover #frm_Underline{\n"
+"    background: rgb(200, 200, 200);    \n"
+"}")
+        self.btn_NavSell.setText("")
+        self.btn_NavSell.setObjectName("btn_NavSell")
+        self.btn_NavAccount = QtWidgets.QPushButton(self.frm_NavBar)
+        self.btn_NavAccount.setGeometry(QtCore.QRect(1450, 0, 120, 50))
+        self.btn_NavAccount.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.btn_NavAccount.setStyleSheet("#btn_NavAccount {background: rgba(0, 0, 0, 0);}\n"
+"\n"
+"QFrame:hover #frm_Underline{\n"
+"    background: rgb(200, 200, 200);    \n"
+"}")
+        self.btn_NavAccount.setText("")
+        self.btn_NavAccount.setObjectName("btn_NavAccount")
         self.stackedWidget = QtWidgets.QStackedWidget(self.frm_SellerWindow)
-        self.stackedWidget.setGeometry(QtCore.QRect(380, 60, 1191, 821))
+        self.stackedWidget.setGeometry(QtCore.QRect(0, 60, 1600, 821))
+        self.stackedWidget.setFocusPolicy(QtCore.Qt.WheelFocus)
+        self.stackedWidget.setStyleSheet("#frm_PopUp {\n"
+"    background: rgba(0, 0, 0, 0);\n"
+"    color: rgba(0, 0, 0, 0);\n"
+"}")
+        self.stackedWidget.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.stackedWidget.setObjectName("stackedWidget")
         self.Home = QtWidgets.QWidget()
         self.Home.setObjectName("Home")
@@ -148,130 +199,553 @@ class SellerGUI(object):
         self.frm_Home.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frm_Home.setObjectName("frm_Home")
         self.grp_UpAndRunning = QtWidgets.QGroupBox(self.frm_Home)
-        self.grp_UpAndRunning.setGeometry(QtCore.QRect(0, -1, 787, 811))
+        self.grp_UpAndRunning.setGeometry(QtCore.QRect(0, -1, 921, 811))
         self.grp_UpAndRunning.setObjectName("grp_UpAndRunning")
         self.listWidget = QtWidgets.QListWidget(self.grp_UpAndRunning)
-        self.listWidget.setGeometry(QtCore.QRect(10, 30, 771, 771))
+        self.listWidget.setGeometry(QtCore.QRect(10, 30, 901, 771))
         self.listWidget.setStyleSheet("")
         self.listWidget.setObjectName("listWidget")
-        self.grp_Analytics = QtWidgets.QGroupBox(self.frm_Home)
-        self.grp_Analytics.setGeometry(QtCore.QRect(801, 0, 380, 811))
+        self.grp_Analytics = QtWidgets.QGroupBox(self.Home)
+        self.grp_Analytics.setGeometry(QtCore.QRect(929, 0, 661, 811))
         self.grp_Analytics.setObjectName("grp_Analytics")
         self.stackedWidget.addWidget(self.Home)
-        self.Add = QtWidgets.QWidget()
-        self.Add.setObjectName("Add")
-        self.frm_Add = QtWidgets.QFrame(self.Add)
-        self.frm_Add.setGeometry(QtCore.QRect(0, 0, 1191, 811))
-        self.frm_Add.setStyleSheet("#frm_Add{ border: 1px solid rgb(200, 200, 200);}")
+        self.Sell = QtWidgets.QWidget()
+        self.Sell.setObjectName("Sell")
+        self.frm_Add = QtWidgets.QFrame(self.Sell)
+        self.frm_Add.setGeometry(QtCore.QRect(90, 70, 681, 741))
+        self.frm_Add.setStyleSheet("#frm_Add {\n"
+"    border-top: 1px solid rgb(200, 200, 200);\n"
+"}")
         self.frm_Add.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frm_Add.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frm_Add.setObjectName("frm_Add")
         self.btn_BrowseImage = QtWidgets.QPushButton(self.frm_Add)
-        self.btn_BrowseImage.setGeometry(QtCore.QRect(220, 321, 200, 35))
-        self.btn_BrowseImage.setStyleSheet("background: rgb(130, 130, 130);\n"
-"border-radius: 10px")
+        self.btn_BrowseImage.setGeometry(QtCore.QRect(240, 335, 200, 35))
+        self.btn_BrowseImage.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.btn_BrowseImage.setStyleSheet("#btn_BrowseImage {\n"
+"    background: rgb(51, 51, 51);\n"
+"    border-radius: 10px\n"
+"}\n"
+"\n"
+"#btn_BrowseImage:hover {\n"
+"    background: rgb(0, 0, 0);\n"
+"}")
         self.btn_BrowseImage.setObjectName("btn_BrowseImage")
-        self.lbl_Image_2 = QtWidgets.QLabel(self.frm_Add)
-        self.lbl_Image_2.setGeometry(QtCore.QRect(40, 421, 100, 31))
-        self.lbl_Image_2.setStyleSheet("border: none;")
-        self.lbl_Image_2.setObjectName("lbl_Image_2")
-        self.lbl_Image_3 = QtWidgets.QLabel(self.frm_Add)
-        self.lbl_Image_3.setGeometry(QtCore.QRect(40, 571, 100, 31))
-        self.lbl_Image_3.setStyleSheet("border: none;")
-        self.lbl_Image_3.setObjectName("lbl_Image_3")
-        self.pushButton_4 = QtWidgets.QPushButton(self.frm_Add)
-        self.pushButton_4.setGeometry(QtCore.QRect(565, 741, 200, 41))
-        self.pushButton_4.setStyleSheet("border-left: 1px solid rgb(243, 76, 83);\n"
-" border-radius: 10px;\n"
-" background: rgb(130, 130, 130);\n"
-"")
-        self.pushButton_4.setObjectName("pushButton_4")
+        self.lbl_Cost = QtWidgets.QLabel(self.frm_Add)
+        self.lbl_Cost.setGeometry(QtCore.QRect(60, 410, 100, 31))
+        self.lbl_Cost.setStyleSheet("border: none;")
+        self.lbl_Cost.setObjectName("lbl_Cost")
+        self.lbl_Descrption = QtWidgets.QLabel(self.frm_Add)
+        self.lbl_Descrption.setGeometry(QtCore.QRect(60, 500, 100, 31))
+        self.lbl_Descrption.setStyleSheet("border: none;")
+        self.lbl_Descrption.setObjectName("lbl_Descrption")
+        self.btn_AddClear = QtWidgets.QPushButton(self.frm_Add)
+        self.btn_AddClear.setGeometry(QtCore.QRect(450, 650, 200, 41))
+        self.btn_AddClear.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.btn_AddClear.setStyleSheet("#btn_AddClear {\n"
+"    border-left: 1px solid rgb(243, 76, 83);\n"
+"    border-radius: 10px;\n"
+"    background: rgb(243, 76, 83);\n"
+"}\n"
+"\n"
+"#btn_AddClear:hover {\n"
+"    background: rgb(255, 0, 0) \n"
+"}")
+        self.btn_AddClear.setObjectName("btn_AddClear")
         self.textEdit = QtWidgets.QTextEdit(self.frm_Add)
-        self.textEdit.setGeometry(QtCore.QRect(220, 541, 411, 161))
+        self.textEdit.setGeometry(QtCore.QRect(240, 470, 411, 141))
+        self.textEdit.viewport().setProperty("cursor", QtGui.QCursor(QtCore.Qt.IBeamCursor))
         self.textEdit.setFocusPolicy(QtCore.Qt.ClickFocus)
         self.textEdit.setStyleSheet("border: 2px solid rgb(243, 76, 83);\n"
 "border-radius: 20px;\n"
 "padding: 10px;\n"
 "")
         self.textEdit.setObjectName("textEdit")
-        self.lbl_PixMap = QtWidgets.QLabel(self.frm_Add)
-        self.lbl_PixMap.setGeometry(QtCore.QRect(220, 116, 200, 200))
-        self.lbl_PixMap.setFocusPolicy(QtCore.Qt.TabFocus)
-        self.lbl_PixMap.setStyleSheet("border: 2px solid rgb(243, 76, 83);\n"
+        self.lbl_ProductImage = QtWidgets.QLabel(self.frm_Add)
+        self.lbl_ProductImage.setGeometry(QtCore.QRect(240, 130, 200, 200))
+        self.lbl_ProductImage.setCursor(QtGui.QCursor(QtCore.Qt.IBeamCursor))
+        self.lbl_ProductImage.setFocusPolicy(QtCore.Qt.TabFocus)
+        self.lbl_ProductImage.setStyleSheet("border: 2px solid rgb(243, 76, 83);\n"
 "border-radius: 15px;")
-        self.lbl_PixMap.setText("")
-        self.lbl_PixMap.setObjectName("lbl_PixMap")
-        self.lineEdit = QtWidgets.QLineEdit(self.frm_Add)
-        self.lineEdit.setGeometry(QtCore.QRect(220, 31, 400, 41))
-        self.lineEdit.setStyleSheet("border: 2px solid rgb(243, 76, 83);\n"
+        self.lbl_ProductImage.setText("")
+        self.lbl_ProductImage.setObjectName("lbl_ProductImage")
+        self.txt_ProductName = QtWidgets.QLineEdit(self.frm_Add)
+        self.txt_ProductName.setGeometry(QtCore.QRect(240, 51, 400, 41))
+        self.txt_ProductName.setStyleSheet("border: 2px solid rgb(243, 76, 83);\n"
 "border-radius: 20px;\n"
 "padding-left: 10px;\n"
 "padding-right: 10px;")
-        self.lineEdit.setObjectName("lineEdit")
+        self.txt_ProductName.setObjectName("txt_ProductName")
         self.lbl_ProductName = QtWidgets.QLabel(self.frm_Add)
-        self.lbl_ProductName.setGeometry(QtCore.QRect(30, 30, 171, 41))
+        self.lbl_ProductName.setGeometry(QtCore.QRect(50, 50, 171, 41))
         self.lbl_ProductName.setObjectName("lbl_ProductName")
-        self.pushButton_3 = QtWidgets.QPushButton(self.frm_Add)
-        self.pushButton_3.setGeometry(QtCore.QRect(368, 741, 200, 41))
-        self.pushButton_3.setStyleSheet("border-right: 1px solid rgb(243, 76, 83);\n"
-" border-radius: 10px;\n"
-" background: rgb(130, 130, 130);\n"
-"")
-        self.pushButton_3.setObjectName("pushButton_3")
+        self.btn_Sell = QtWidgets.QPushButton(self.frm_Add)
+        self.btn_Sell.setGeometry(QtCore.QRect(210, 650, 200, 41))
+        self.btn_Sell.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.btn_Sell.setStyleSheet("#btn_Sell {\n"
+"    border-right: 1px solid rgb(243, 76, 83);\n"
+"    border-radius: 10px;\n"
+"    background: rgb(243, 76, 83);\n"
+"}\n"
+"\n"
+"#btn_Sell:hover {\n"
+"    background: rgb(255, 0, 0);\n"
+"}")
+        self.btn_Sell.setObjectName("btn_Sell")
         self.lbl_Image = QtWidgets.QLabel(self.frm_Add)
-        self.lbl_Image.setGeometry(QtCore.QRect(30, 196, 100, 31))
+        self.lbl_Image.setGeometry(QtCore.QRect(50, 210, 100, 31))
         self.lbl_Image.setStyleSheet("border: none;")
         self.lbl_Image.setObjectName("lbl_Image")
-        self.doubleSpinBox = QtWidgets.QDoubleSpinBox(self.frm_Add)
-        self.doubleSpinBox.setGeometry(QtCore.QRect(220, 411, 151, 43))
-        self.doubleSpinBox.setStyleSheet("border: 2px solid rgb(243, 76, 83);\n"
+        self.dspb_Cost = QtWidgets.QDoubleSpinBox(self.frm_Add)
+        self.dspb_Cost.setGeometry(QtCore.QRect(240, 400, 151, 43))
+        self.dspb_Cost.setCursor(QtGui.QCursor(QtCore.Qt.IBeamCursor))
+        self.dspb_Cost.setStyleSheet("border: 2px solid rgb(243, 76, 83);\n"
 "border-radius: 20px;\n"
 "padding: 2px;")
-        self.doubleSpinBox.setAlignment(QtCore.Qt.AlignCenter)
-        self.doubleSpinBox.setButtonSymbols(QtWidgets.QAbstractSpinBox.NoButtons)
-        self.doubleSpinBox.setMaximum(1000000.0)
-        self.doubleSpinBox.setStepType(QtWidgets.QAbstractSpinBox.DefaultStepType)
-        self.doubleSpinBox.setObjectName("doubleSpinBox")
-        self.stackedWidget.addWidget(self.Add)
-        self.pg_Accounts = QtWidgets.QWidget()
-        self.pg_Accounts.setObjectName("pg_Accounts")
-        self.stackedWidget.addWidget(self.pg_Accounts)
-        self.pg_BankDetails = QtWidgets.QWidget()
-        self.pg_BankDetails.setObjectName("pg_BankDetails")
-        self.stackedWidget.addWidget(self.pg_BankDetails)
-        self.gridLayout.addWidget(self.frm_SellerWindow, 0, 0, 1, 1)
+        self.dspb_Cost.setAlignment(QtCore.Qt.AlignCenter)
+        self.dspb_Cost.setButtonSymbols(QtWidgets.QAbstractSpinBox.NoButtons)
+        self.dspb_Cost.setMaximum(1000000.0)
+        self.dspb_Cost.setStepType(QtWidgets.QAbstractSpinBox.DefaultStepType)
+        self.dspb_Cost.setObjectName("dspb_Cost")
+        self.lbl_AddProduct = QtWidgets.QLabel(self.Sell)
+        self.lbl_AddProduct.setGeometry(QtCore.QRect(90, 20, 111, 41))
+        self.lbl_AddProduct.setStyleSheet("color: rgb(240, 240, 240);")
+        self.lbl_AddProduct.setObjectName("lbl_AddProduct")
+        self.frm_Previrew = QtWidgets.QFrame(self.Sell)
+        self.frm_Previrew.setGeometry(QtCore.QRect(790, 10, 781, 801))
+        self.frm_Previrew.setStyleSheet("#frm_Previrew {border-left: 1px solid rgb(200, 200, 200);}")
+        self.frm_Previrew.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frm_Previrew.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frm_Previrew.setObjectName("frm_Previrew")
+        self.lbl_AfterLook = QtWidgets.QLabel(self.frm_Previrew)
+        self.lbl_AfterLook.setGeometry(QtCore.QRect(90, 10, 91, 41))
+        self.lbl_AfterLook.setStyleSheet("color: rgb(240, 240, 240);")
+        self.lbl_AfterLook.setObjectName("lbl_AfterLook")
+        self.frm_Divider = QtWidgets.QFrame(self.frm_Previrew)
+        self.frm_Divider.setGeometry(QtCore.QRect(90, 60, 600, 2))
+        self.frm_Divider.setStyleSheet("#frm_Divider {\n"
+"    border-top: 1px solid rgb(200, 200, 200);\n"
+"}")
+        self.frm_Divider.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frm_Divider.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frm_Divider.setObjectName("frm_Divider")
+        self.lbl_AfterProductImage = QtWidgets.QLabel(self.frm_Previrew)
+        self.lbl_AfterProductImage.setGeometry(QtCore.QRect(420, 120, 250, 250))
+        self.lbl_AfterProductImage.setCursor(QtGui.QCursor(QtCore.Qt.IBeamCursor))
+        self.lbl_AfterProductImage.setFocusPolicy(QtCore.Qt.TabFocus)
+        self.lbl_AfterProductImage.setStyleSheet("border: 2px solid rgb(243, 76, 83);\n"
+"border-radius: 15px;")
+        self.lbl_AfterProductImage.setText("")
+        self.lbl_AfterProductImage.setObjectName("lbl_AfterProductImage")
+        self.lbl_AftreBrand = QtWidgets.QLabel(self.frm_Previrew)
+        self.lbl_AftreBrand.setGeometry(QtCore.QRect(430, 390, 250, 41))
+        self.lbl_AftreBrand.setObjectName("lbl_AftreBrand")
+        self.lbl_AfterProductName = QtWidgets.QLabel(self.frm_Previrew)
+        self.lbl_AfterProductName.setGeometry(QtCore.QRect(110, 130, 271, 41))
+        self.lbl_AfterProductName.setObjectName("lbl_AfterProductName")
+        self.lbl_AfterSeller = QtWidgets.QLabel(self.frm_Previrew)
+        self.lbl_AfterSeller.setGeometry(QtCore.QRect(110, 310, 271, 41))
+        self.lbl_AfterSeller.setObjectName("lbl_AfterSeller")
+        self.lbl_AfterProductCost = QtWidgets.QLabel(self.frm_Previrew)
+        self.lbl_AfterProductCost.setGeometry(QtCore.QRect(110, 220, 271, 41))
+        self.lbl_AfterProductCost.setObjectName("lbl_AfterProductCost")
+        self.lbl_AfterProductDescription = QtWidgets.QLabel(self.frm_Previrew)
+        self.lbl_AfterProductDescription.setGeometry(QtCore.QRect(110, 500, 511, 231))
+        self.lbl_AfterProductDescription.setStyleSheet("")
+        self.lbl_AfterProductDescription.setAlignment(QtCore.Qt.AlignCenter)
+        self.lbl_AfterProductDescription.setObjectName("lbl_AfterProductDescription")
+        self.stackedWidget.addWidget(self.Sell)
+        self.Account = QtWidgets.QWidget()
+        self.Account.setObjectName("Account")
+        self.frm_Divider_2 = QtWidgets.QFrame(self.Account)
+        self.frm_Divider_2.setGeometry(QtCore.QRect(10, 0, 381, 821))
+        self.frm_Divider_2.setStyleSheet("#frm_Divider_2{border-right: 1px solid rgb(200, 200, 200);}")
+        self.frm_Divider_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frm_Divider_2.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frm_Divider_2.setObjectName("frm_Divider_2")
+        self.frm_AccountDivider = QtWidgets.QFrame(self.frm_Divider_2)
+        self.frm_AccountDivider.setGeometry(QtCore.QRect(20, 20, 241, 201))
+        self.frm_AccountDivider.setStyleSheet("#frm_AccountDivider {\n"
+"    border-bottom: 1px solid rgb(200, 200, 200);\n"
+"}")
+        self.frm_AccountDivider.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frm_AccountDivider.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frm_AccountDivider.setObjectName("frm_AccountDivider")
+        self.btn_AccountDetails = QtWidgets.QPushButton(self.frm_AccountDivider)
+        self.btn_AccountDetails.setGeometry(QtCore.QRect(20, 60, 151, 21))
+        self.btn_AccountDetails.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.btn_AccountDetails.setFocusPolicy(QtCore.Qt.WheelFocus)
+        self.btn_AccountDetails.setStyleSheet("#btn_AccountDetails:hover {\n"
+"    border: none;\n"
+"    color: rgb(255, 255, 255);   \n"
+"    font-size: 22px; \n"
+" }")
+        self.btn_AccountDetails.setObjectName("btn_AccountDetails")
+        self.btn_BankDetails = QtWidgets.QPushButton(self.frm_AccountDivider)
+        self.btn_BankDetails.setGeometry(QtCore.QRect(20, 110, 121, 21))
+        self.btn_BankDetails.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.btn_BankDetails.setFocusPolicy(QtCore.Qt.WheelFocus)
+        self.btn_BankDetails.setStyleSheet("#btn_BankDetails:hover {\n"
+"    border: none;\n"
+"    color: rgb(255, 255, 255);\n"
+"    font-size: 22px;      \n"
+" }")
+        self.btn_BankDetails.setObjectName("btn_BankDetails")
+        self.btn_Address = QtWidgets.QPushButton(self.frm_AccountDivider)
+        self.btn_Address.setGeometry(QtCore.QRect(20, 160, 81, 21))
+        self.btn_Address.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.btn_Address.setFocusPolicy(QtCore.Qt.WheelFocus)
+        self.btn_Address.setStyleSheet("#btn_Address:hover {\n"
+"    border: none;\n"
+"    color: rgb(255, 255, 255);\n"
+"    font-size: 22px;     \n"
+" }")
+        self.btn_Address.setObjectName("btn_Address")
+        self.lbl_Account = QtWidgets.QLabel(self.frm_AccountDivider)
+        self.lbl_Account.setGeometry(QtCore.QRect(0, 20, 71, 16))
+        self.lbl_Account.setStyleSheet("#lbl_Account {color: rgb(170, 170, 170);}")
+        self.lbl_Account.setObjectName("lbl_Account")
+        self.stackedWidget_2 = QtWidgets.QStackedWidget(self.Account)
+        self.stackedWidget_2.setGeometry(QtCore.QRect(400, 20, 1191, 791))
+        self.stackedWidget_2.setObjectName("stackedWidget_2")
+        self.pg_Account = QtWidgets.QWidget()
+        self.pg_Account.setObjectName("pg_Account")
+        self.frm_ProfileDetails = QtWidgets.QFrame(self.pg_Account)
+        self.frm_ProfileDetails.setGeometry(QtCore.QRect(130, 60, 851, 741))
+        self.frm_ProfileDetails.setFocusPolicy(QtCore.Qt.WheelFocus)
+        self.frm_ProfileDetails.setStyleSheet("#frm_ProfileDetails {border-top: 1px solid rgb(200, 200, 200);}")
+        self.frm_ProfileDetails.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frm_ProfileDetails.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frm_ProfileDetails.setObjectName("frm_ProfileDetails")
+        self.lbl_AccountDetailsName = QtWidgets.QLabel(self.frm_ProfileDetails)
+        self.lbl_AccountDetailsName.setGeometry(QtCore.QRect(50, 50, 55, 41))
+        self.lbl_AccountDetailsName.setObjectName("lbl_AccountDetailsName")
+        self.lbl_AccountPhoneNumber = QtWidgets.QLabel(self.frm_ProfileDetails)
+        self.lbl_AccountPhoneNumber.setGeometry(QtCore.QRect(50, 149, 131, 41))
+        self.lbl_AccountPhoneNumber.setObjectName("lbl_AccountPhoneNumber")
+        self.lbl_AccountEmail = QtWidgets.QLabel(self.frm_ProfileDetails)
+        self.lbl_AccountEmail.setGeometry(QtCore.QRect(50, 250, 55, 41))
+        self.lbl_AccountEmail.setObjectName("lbl_AccountEmail")
+        self.lbl_AccountDOB = QtWidgets.QLabel(self.frm_ProfileDetails)
+        self.lbl_AccountDOB.setGeometry(QtCore.QRect(40, 348, 121, 41))
+        self.lbl_AccountDOB.setObjectName("lbl_AccountDOB")
+        self.dte_AccountDOB = QtWidgets.QDateEdit(self.frm_ProfileDetails)
+        self.dte_AccountDOB.setGeometry(QtCore.QRect(270, 348, 150, 41))
+        self.dte_AccountDOB.setCursor(QtGui.QCursor(QtCore.Qt.IBeamCursor))
+        self.dte_AccountDOB.setStyleSheet("border: 2px solid rgb(243,  76, 83);\n"
+"border-radius: 20px;")
+        self.dte_AccountDOB.setAlignment(QtCore.Qt.AlignCenter)
+        self.dte_AccountDOB.setButtonSymbols(QtWidgets.QAbstractSpinBox.NoButtons)
+        self.dte_AccountDOB.setObjectName("dte_AccountDOB")
+        self.lbl_AccountSex = QtWidgets.QLabel(self.frm_ProfileDetails)
+        self.lbl_AccountSex.setGeometry(QtCore.QRect(40, 454, 81, 41))
+        self.lbl_AccountSex.setObjectName("lbl_AccountSex")
+        self.lbl_City = QtWidgets.QLabel(self.frm_ProfileDetails)
+        self.lbl_City.setGeometry(QtCore.QRect(40, 560, 81, 41))
+        self.lbl_City.setObjectName("lbl_City")
+        self.lineEdit = QtWidgets.QLineEdit(self.frm_ProfileDetails)
+        self.lineEdit.setGeometry(QtCore.QRect(270, 50, 400, 41))
+        self.lineEdit.setStyleSheet("padding-left: 10px;\n"
+"padding-right: 10px;")
+        self.lineEdit.setClearButtonEnabled(True)
+        self.lineEdit.setObjectName("lineEdit")
+        self.lineEdit_2 = QtWidgets.QLineEdit(self.frm_ProfileDetails)
+        self.lineEdit_2.setGeometry(QtCore.QRect(270, 149, 400, 41))
+        self.lineEdit_2.setStyleSheet("padding-left: 10px;\n"
+"padding-right: 10px;")
+        self.lineEdit_2.setClearButtonEnabled(True)
+        self.lineEdit_2.setObjectName("lineEdit_2")
+        self.lineEdit_3 = QtWidgets.QLineEdit(self.frm_ProfileDetails)
+        self.lineEdit_3.setGeometry(QtCore.QRect(270, 250, 400, 41))
+        self.lineEdit_3.setStyleSheet("padding-left: 10px;\n"
+"padding-right: 10px;")
+        self.lineEdit_3.setClearButtonEnabled(True)
+        self.lineEdit_3.setObjectName("lineEdit_3")
+        self.lineEdit_4 = QtWidgets.QLineEdit(self.frm_ProfileDetails)
+        self.lineEdit_4.setGeometry(QtCore.QRect(270, 454, 400, 41))
+        self.lineEdit_4.setStyleSheet("padding-left: 10px;\n"
+"padding-right: 10px;")
+        self.lineEdit_4.setClearButtonEnabled(True)
+        self.lineEdit_4.setObjectName("lineEdit_4")
+        self.lineEdit_5 = QtWidgets.QLineEdit(self.frm_ProfileDetails)
+        self.lineEdit_5.setGeometry(QtCore.QRect(270, 560, 400, 41))
+        self.lineEdit_5.setStyleSheet("padding-left: 10px;\n"
+"padding-right: 10px;")
+        self.lineEdit_5.setClearButtonEnabled(True)
+        self.lineEdit_5.setObjectName("lineEdit_5")
+        self.btn_AccountOK = QtWidgets.QPushButton(self.frm_ProfileDetails)
+        self.btn_AccountOK.setGeometry(QtCore.QRect(210, 655, 200, 41))
+        self.btn_AccountOK.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.btn_AccountOK.setStyleSheet("#btn_AccountOK {\n"
+"    border-right: 1px solid rgb(243, 76, 83);\n"
+"    border-radius: 10px;\n"
+"    background: rgb(243, 76, 83);\n"
+"}\n"
+"\n"
+"#btn_AccountOK:hover {\n"
+"    background: rgb(255, 0, 0);\n"
+"}")
+        self.btn_AccountOK.setObjectName("btn_AccountOK")
+        self.btn_AccountClear = QtWidgets.QPushButton(self.frm_ProfileDetails)
+        self.btn_AccountClear.setGeometry(QtCore.QRect(437, 655, 200, 41))
+        self.btn_AccountClear.setFocusPolicy(QtCore.Qt.NoFocus)
+        self.btn_AccountClear.setStyleSheet("#btn_AccountClear {\n"
+"    border-left: 1px solid rgb(243, 76, 83);\n"
+"    border-radius: 10px;\n"
+"    background: rgb(243, 76, 83);\n"
+"}\n"
+"\n"
+"#btn_AccountClear:hover  {\n"
+"    border-left: 1px solid rgb(243, 76, 83);\n"
+"    border-radius: 10px;\n"
+"    background: rgb(255, 0, 0);\n"
+"}")
+        self.btn_AccountClear.setObjectName("btn_AccountClear")
+        self.lbl_Account_details = QtWidgets.QLabel(self.pg_Account)
+        self.lbl_Account_details.setGeometry(QtCore.QRect(170, 10, 141, 41))
+        self.lbl_Account_details.setStyleSheet("color: rgb(240, 240, 240);")
+        self.lbl_Account_details.setObjectName("lbl_Account_details")
+        self.stackedWidget_2.addWidget(self.pg_Account)
+        self.pg_Bank = QtWidgets.QWidget()
+        self.pg_Bank.setObjectName("pg_Bank")
+        self.label_8 = QtWidgets.QLabel(self.pg_Bank)
+        self.label_8.setGeometry(QtCore.QRect(170, 10, 121, 41))
+        self.label_8.setStyleSheet("color: rgb(240, 240, 240);")
+        self.label_8.setObjectName("label_8")
+        self.frm_Account = QtWidgets.QFrame(self.pg_Bank)
+        self.frm_Account.setGeometry(QtCore.QRect(130, 60, 851, 741))
+        self.frm_Account.setStyleSheet("#frm_Account {\n"
+"    border-top: 1px solid rgb(200, 200, 200);\n"
+"}")
+        self.frm_Account.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frm_Account.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frm_Account.setObjectName("frm_Account")
+        self.lbl_AccountName = QtWidgets.QLabel(self.frm_Account)
+        self.lbl_AccountName.setGeometry(QtCore.QRect(50, 50, 131, 41))
+        self.lbl_AccountName.setObjectName("lbl_AccountName")
+        self.lbl_BankName = QtWidgets.QLabel(self.frm_Account)
+        self.lbl_BankName.setGeometry(QtCore.QRect(50, 170, 131, 41))
+        self.lbl_BankName.setObjectName("lbl_BankName")
+        self.lbl_AccountNumber = QtWidgets.QLabel(self.frm_Account)
+        self.lbl_AccountNumber.setGeometry(QtCore.QRect(50, 280, 151, 41))
+        self.lbl_AccountNumber.setObjectName("lbl_AccountNumber")
+        self.lbl_IFSC = QtWidgets.QLabel(self.frm_Account)
+        self.lbl_IFSC.setGeometry(QtCore.QRect(50, 390, 131, 41))
+        self.lbl_IFSC.setObjectName("lbl_IFSC")
+        self.txt_AccountName = QtWidgets.QLineEdit(self.frm_Account)
+        self.txt_AccountName.setGeometry(QtCore.QRect(270, 50, 400, 41))
+        self.txt_AccountName.setStyleSheet("padding-left: 10px;\n"
+"padding-right: 10px;\n"
+"color: rgb(200, 200, 200);")
+        self.txt_AccountName.setClearButtonEnabled(True)
+        self.txt_AccountName.setObjectName("txt_AccountName")
+        self.txt_AccountNumber = QtWidgets.QLineEdit(self.frm_Account)
+        self.txt_AccountNumber.setGeometry(QtCore.QRect(270, 280, 391, 41))
+        self.txt_AccountNumber.setStyleSheet("padding-left: 10px;\n"
+"padding-right: 10px;\n"
+"color: rgb(200, 200, 200);")
+        self.txt_AccountNumber.setClearButtonEnabled(True)
+        self.txt_AccountNumber.setObjectName("txt_AccountNumber")
+        self.txt_IFSC = QtWidgets.QLineEdit(self.frm_Account)
+        self.txt_IFSC.setGeometry(QtCore.QRect(270, 390, 381, 41))
+        self.txt_IFSC.setStyleSheet("padding-left: 10px;\n"
+"padding-right: 10px;\n"
+"color: rgb(200, 200, 200);")
+        self.txt_IFSC.setClearButtonEnabled(True)
+        self.txt_IFSC.setObjectName("txt_IFSC")
+        self.btn_BankClear = QtWidgets.QPushButton(self.frm_Account)
+        self.btn_BankClear.setGeometry(QtCore.QRect(437, 655, 200, 41))
+        self.btn_BankClear.setStyleSheet("#btn_BankClear {\n"
+"    border-left: 1px solid rgb(243, 76, 83);\n"
+"    border-radius: 10px;\n"
+"    background: rgb(243, 76, 83);\n"
+"}\n"
+"\n"
+"#btn_BankClear:hover {\n"
+"    background: rgb(255, 0, 0);\n"
+"}")
+        self.btn_BankClear.setObjectName("btn_BankClear")
+        self.btn_BankOK = QtWidgets.QPushButton(self.frm_Account)
+        self.btn_BankOK.setGeometry(QtCore.QRect(210, 655, 200, 41))
+        self.btn_BankOK.setStyleSheet("#btn_BankOK {\n"
+"    border-right: 1px solid rgb(243, 76, 83);\n"
+"    border-radius: 10px;\n"
+"    background: rgb(243, 76, 83);\n"
+"}\n"
+"\n"
+"#btn_BankOK:hover {\n"
+"    background: rgb(255, 0, 0);\n"
+"}")
+        self.btn_BankOK.setObjectName("btn_BankOK")
+        self.txt_AccountName_2 = QtWidgets.QLineEdit(self.frm_Account)
+        self.txt_AccountName_2.setGeometry(QtCore.QRect(270, 170, 400, 41))
+        self.txt_AccountName_2.setStyleSheet("padding-left: 10px;\n"
+"padding-right: 10px;\n"
+"color: rgb(200, 200, 200);")
+        self.txt_AccountName_2.setClearButtonEnabled(True)
+        self.txt_AccountName_2.setObjectName("txt_AccountName_2")
+        self.stackedWidget_2.addWidget(self.pg_Bank)
+        self.page_4 = QtWidgets.QWidget()
+        self.page_4.setObjectName("page_4")
+        self.frm_Address = QtWidgets.QFrame(self.page_4)
+        self.frm_Address.setGeometry(QtCore.QRect(130, 60, 851, 741))
+        self.frm_Address.setStyleSheet("#frm_Address {\n"
+"    border-top: 1px solid rgb(200, 200, 200);\n"
+"}")
+        self.frm_Address.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frm_Address.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frm_Address.setObjectName("frm_Address")
+        self.lbl_HouseNumber = QtWidgets.QLabel(self.frm_Address)
+        self.lbl_HouseNumber.setGeometry(QtCore.QRect(50, 50, 171, 41))
+        self.lbl_HouseNumber.setObjectName("lbl_HouseNumber")
+        self.txt_HouseNumber = QtWidgets.QLineEdit(self.frm_Address)
+        self.txt_HouseNumber.setGeometry(QtCore.QRect(270, 50, 400, 41))
+        self.txt_HouseNumber.setStyleSheet("padding-left: 10px;\n"
+"padding-right: 10px;\n"
+"color: rgb(200, 200, 200);\n"
+"")
+        self.txt_HouseNumber.setClearButtonEnabled(True)
+        self.txt_HouseNumber.setObjectName("txt_HouseNumber")
+        self.lbl_Line_1 = QtWidgets.QLabel(self.frm_Address)
+        self.lbl_Line_1.setGeometry(QtCore.QRect(60, 170, 101, 41))
+        self.lbl_Line_1.setObjectName("lbl_Line_1")
+        self.txt_line_1 = QtWidgets.QLineEdit(self.frm_Address)
+        self.txt_line_1.setGeometry(QtCore.QRect(270, 170, 400, 41))
+        self.txt_line_1.setStyleSheet("padding-left: 10px;\n"
+"padding-right: 10px;\n"
+"color: rgb(200, 200, 200);\n"
+"")
+        self.txt_line_1.setClearButtonEnabled(True)
+        self.txt_line_1.setObjectName("txt_line_1")
+        self.txt_line_2 = QtWidgets.QLineEdit(self.frm_Address)
+        self.txt_line_2.setGeometry(QtCore.QRect(270, 290, 400, 41))
+        self.txt_line_2.setStyleSheet("padding-left: 10px;\n"
+"padding-right: 10px;\n"
+"color: rgb(200, 200, 200);\n"
+"")
+        self.txt_line_2.setClearButtonEnabled(True)
+        self.txt_line_2.setObjectName("txt_line_2")
+        self.lbl_Line_2 = QtWidgets.QLabel(self.frm_Address)
+        self.lbl_Line_2.setGeometry(QtCore.QRect(60, 290, 101, 41))
+        self.lbl_Line_2.setObjectName("lbl_Line_2")
+        self.btn_AddressClear = QtWidgets.QPushButton(self.frm_Address)
+        self.btn_AddressClear.setGeometry(QtCore.QRect(437, 655, 200, 41))
+        self.btn_AddressClear.setStyleSheet("#btn_AddressClear {\n"
+"    border-left: 1px solid rgb(243, 76, 83);\n"
+"    border-radius: 10px;\n"
+"    background: rgb(243, 76, 83);\n"
+"}\n"
+"\n"
+"#btn_AddressClear:hover {\n"
+"    background: rgb(255, 0, 0);\n"
+"}")
+        self.btn_AddressClear.setObjectName("btn_AddressClear")
+        self.btn_AddressOK = QtWidgets.QPushButton(self.frm_Address)
+        self.btn_AddressOK.setGeometry(QtCore.QRect(210, 655, 200, 41))
+        self.btn_AddressOK.setStyleSheet("#btn_AddressOK {\n"
+"    border-right: 1px solid rgb(243, 76, 83);\n"
+"    border-radius: 10px;\n"
+"    background: rgb(243, 76, 83);\n"
+"}\n"
+"\n"
+"#btn_AddressOK:hover {\n"
+"    background: rgb(255, 0, 0);\n"
+"}")
+        self.btn_AddressOK.setObjectName("btn_AddressOK")
+        self.label_11 = QtWidgets.QLabel(self.frm_Address)
+        self.label_11.setGeometry(QtCore.QRect(60, 400, 71, 41))
+        self.label_11.setObjectName("label_11")
+        self.lineEdit_6 = QtWidgets.QLineEdit(self.frm_Address)
+        self.lineEdit_6.setGeometry(QtCore.QRect(270, 400, 400, 41))
+        self.lineEdit_6.setStyleSheet("padding-left: 10px;\n"
+"padding-right: 10px;\n"
+"color: rgb(200, 200, 200);\n"
+"")
+        self.lineEdit_6.setClearButtonEnabled(True)
+        self.lineEdit_6.setObjectName("lineEdit_6")
+        self.lbl_Address = QtWidgets.QLabel(self.page_4)
+        self.lbl_Address.setGeometry(QtCore.QRect(170, 10, 91, 41))
+        self.lbl_Address.setObjectName("lbl_Address")
+        self.stackedWidget_2.addWidget(self.page_4)
+        self.stackedWidget.addWidget(self.Account)
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
         self.stackedWidget.setCurrentIndex(1)
-        self.btn_BrowseImage.clicked.connect(self.doubleSpinBox.setFocus)
-        self.lineEdit.returnPressed.connect(self.btn_BrowseImage.setFocus)
-        self.btn_Add.clicked.connect(self.lineEdit.setFocus)
+        self.stackedWidget_2.setCurrentIndex(0)
+        self.btn_BrowseImage.clicked.connect(self.dspb_Cost.setFocus)
+        self.txt_ProductName.returnPressed.connect(self.btn_BrowseImage.setFocus)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "depot"))
+        self.cmbx_Filter.setItemText(0, _translate("MainWindow", "All"))
+        self.cmbx_Filter.setItemText(1, _translate("MainWindow", "Cloths"))
+        self.cmbx_Filter.setItemText(2, _translate("MainWindow", "MumboJumbo"))
+        self.cmbx_Filter.setItemText(3, _translate("MainWindow", "Hulallalalalalalalhulelelelelelo"))
         self.txt_SearchBar.setPlaceholderText(_translate("MainWindow", "Search"))
-        self.btn_Accounts.setText(_translate("MainWindow", "Accounts"))
-        self.btn_Edit.setText(_translate("MainWindow", "Edit"))
-        self.btn_Home.setText(_translate("MainWindow", "Home"))
-        self.btn_Add.setText(_translate("MainWindow", "Add"))
-        self.lbl_Sell.setText(_translate("MainWindow", "Sell"))
-        self.lbl_Sell_2.setText(_translate("MainWindow", "Seller"))
-        self.btn_BankDetails.setText(_translate("MainWindow", "Bank Details"))
-        self.btn_Address.setText(_translate("MainWindow", "Address"))
+        self.lbl_NavHome.setText(_translate("MainWindow", "Home"))
+        self.lbl_NavSell.setText(_translate("MainWindow", "Sell"))
+        self.lbl_NavAccount.setText(_translate("MainWindow", "Account"))
         self.grp_UpAndRunning.setTitle(_translate("MainWindow", "Up and Running"))
         self.grp_Analytics.setTitle(_translate("MainWindow", "Analytics"))
         self.btn_BrowseImage.setText(_translate("MainWindow", "Browse Image"))
-        self.lbl_Image_2.setToolTip(_translate("MainWindow", "Add an Image to Accentuate your product"))
-        self.lbl_Image_2.setText(_translate("MainWindow", "Cost"))
-        self.lbl_Image_3.setToolTip(_translate("MainWindow", "Add an Image to Accentuate your product"))
-        self.lbl_Image_3.setText(_translate("MainWindow", "Description"))
-        self.pushButton_4.setText(_translate("MainWindow", "Clear"))
+        self.lbl_Cost.setToolTip(_translate("MainWindow", "Add an Image to Accentuate your product"))
+        self.lbl_Cost.setText(_translate("MainWindow", "Cost"))
+        self.lbl_Descrption.setToolTip(_translate("MainWindow", "Add an Image to Accentuate your product"))
+        self.lbl_Descrption.setText(_translate("MainWindow", "Description"))
+        self.btn_AddClear.setText(_translate("MainWindow", "Clear"))
         self.lbl_ProductName.setText(_translate("MainWindow", "Product Name"))
-        self.pushButton_3.setText(_translate("MainWindow", "OK"))
+        self.btn_Sell.setText(_translate("MainWindow", "Sell"))
         self.lbl_Image.setToolTip(_translate("MainWindow", "Add an Image to Accentuate your product"))
         self.lbl_Image.setText(_translate("MainWindow", "Image"))
-        self.doubleSpinBox.setPrefix(_translate("MainWindow", "Rs. "))
-        self.doubleSpinBox.setSuffix(_translate("MainWindow", "/-"))
+        self.dspb_Cost.setPrefix(_translate("MainWindow", "Rs. "))
+        self.dspb_Cost.setSuffix(_translate("MainWindow", "/-"))
+        self.lbl_AddProduct.setText(_translate("MainWindow", "Add Product"))
+        self.lbl_AfterLook.setText(_translate("MainWindow", "After Look"))
+        self.lbl_AftreBrand.setText(_translate("MainWindow", "Brand"))
+        self.lbl_AfterProductName.setText(_translate("MainWindow", "Product Name"))
+        self.lbl_AfterSeller.setText(_translate("MainWindow", "Seller"))
+        self.lbl_AfterProductCost.setText(_translate("MainWindow", "Product Cost"))
+        self.lbl_AfterProductDescription.setText(_translate("MainWindow", "<html><head/><body><p>/\\</p><p>|</p><p><span style=\" font-size:12pt;\">&lt;----------------------Product Description----------------------&gt;</span></p><p><span style=\" font-size:12pt;\">|</span></p><p><span style=\" font-size:12pt;\">\\/</span></p></body></html>"))
+        self.btn_AccountDetails.setText(_translate("MainWindow", "Account Details"))
+        self.btn_BankDetails.setText(_translate("MainWindow", "Bank Details"))
+        self.btn_Address.setText(_translate("MainWindow", "Address"))
+        self.lbl_Account.setText(_translate("MainWindow", "Account"))
+        self.lbl_AccountDetailsName.setText(_translate("MainWindow", "Name"))
+        self.lbl_AccountPhoneNumber.setText(_translate("MainWindow", "Phone Number"))
+        self.lbl_AccountEmail.setText(_translate("MainWindow", "Email"))
+        self.lbl_AccountDOB.setText(_translate("MainWindow", "Date Of Birth"))
+        self.lbl_AccountSex.setText(_translate("MainWindow", "Sex"))
+        self.lbl_City.setText(_translate("MainWindow", "City"))
+        self.lineEdit.setPlaceholderText(_translate("MainWindow", "Full Name"))
+        self.lineEdit_2.setPlaceholderText(_translate("MainWindow", "Contact No."))
+        self.lineEdit_3.setPlaceholderText(_translate("MainWindow", "Email Address"))
+        self.lineEdit_4.setPlaceholderText(_translate("MainWindow", "Gender"))
+        self.lineEdit_5.setPlaceholderText(_translate("MainWindow", "City Name"))
+        self.btn_AccountOK.setText(_translate("MainWindow", "OK"))
+        self.btn_AccountClear.setText(_translate("MainWindow", "Clear"))
+        self.lbl_Account_details.setText(_translate("MainWindow", "Account Details"))
+        self.label_8.setText(_translate("MainWindow", "Bank Details"))
+        self.lbl_AccountName.setText(_translate("MainWindow", "Account Name"))
+        self.lbl_BankName.setText(_translate("MainWindow", "Bank Name"))
+        self.lbl_AccountNumber.setText(_translate("MainWindow", "Account Number"))
+        self.lbl_IFSC.setText(_translate("MainWindow", "IFSC Code"))
+        self.txt_AccountName.setPlaceholderText(_translate("MainWindow", "Full Name"))
+        self.txt_AccountNumber.setPlaceholderText(_translate("MainWindow", "Official Account No."))
+        self.txt_IFSC.setPlaceholderText(_translate("MainWindow", "Official IFSC Code"))
+        self.btn_BankClear.setText(_translate("MainWindow", "Clear"))
+        self.btn_BankOK.setText(_translate("MainWindow", "OK"))
+        self.txt_AccountName_2.setPlaceholderText(_translate("MainWindow", "Full Form"))
+        self.lbl_HouseNumber.setText(_translate("MainWindow", "Address"))
+        self.txt_HouseNumber.setPlaceholderText(_translate("MainWindow", "House/Building No, Street, Area"))
+        self.lbl_Line_1.setText(_translate("MainWindow", "City"))
+        self.txt_line_1.setPlaceholderText(_translate("MainWindow", "Enter City Name"))
+        self.txt_line_2.setPlaceholderText(_translate("MainWindow", "Enter State Name"))
+        self.lbl_Line_2.setText(_translate("MainWindow", "State"))
+        self.btn_AddressClear.setText(_translate("MainWindow", "Clear"))
+        self.btn_AddressOK.setText(_translate("MainWindow", "OK"))
+        self.label_11.setText(_translate("MainWindow", "Pincode"))
+        self.lineEdit_6.setPlaceholderText(_translate("MainWindow", "Enter State"))
+        self.lbl_Address.setText(_translate("MainWindow", "Address"))
