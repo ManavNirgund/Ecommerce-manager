@@ -651,7 +651,7 @@ QFrame:hover #frm_Underline{
          <string>Clear</string>
         </property>
        </widget>
-       <widget class="QTextEdit" name="textEdit">
+       <widget class="QTextEdit" name="txt_ProductDescription">
         <property name="geometry">
          <rect>
           <x>240</x>
@@ -1120,7 +1120,7 @@ border-radius: 15px;</string>
         </rect>
        </property>
        <property name="currentIndex">
-        <number>0</number>
+        <number>2</number>
        </property>
        <widget class="QWidget" name="pg_Account">
         <widget class="QFrame" name="frm_ProfileDetails">
@@ -1170,7 +1170,7 @@ border-radius: 15px;</string>
            <string>Phone Number</string>
           </property>
          </widget>
-         <widget class="QLabel" name="lbl_AccountEmail">
+         <widget class="QLabel" name="txt_AccountDetailsEmail_2">
           <property name="geometry">
            <rect>
             <x>50</x>
@@ -1245,7 +1245,7 @@ border-radius: 20px;</string>
            <string>City</string>
           </property>
          </widget>
-         <widget class="QLineEdit" name="lineEdit">
+         <widget class="QLineEdit" name="txt_AccountDetailsName">
           <property name="geometry">
            <rect>
             <x>270</x>
@@ -1265,7 +1265,7 @@ padding-right: 10px;</string>
            <bool>true</bool>
           </property>
          </widget>
-         <widget class="QLineEdit" name="lineEdit_2">
+         <widget class="QLineEdit" name="txt_AccountDetailsPhoneNumber">
           <property name="geometry">
            <rect>
             <x>270</x>
@@ -1285,7 +1285,7 @@ padding-right: 10px;</string>
            <bool>true</bool>
           </property>
          </widget>
-         <widget class="QLineEdit" name="lineEdit_3">
+         <widget class="QLineEdit" name="txt_AccountDetailsEmail">
           <property name="geometry">
            <rect>
             <x>270</x>
@@ -1305,7 +1305,7 @@ padding-right: 10px;</string>
            <bool>true</bool>
           </property>
          </widget>
-         <widget class="QLineEdit" name="lineEdit_4">
+         <widget class="QLineEdit" name="txt_AccountDetailsSex">
           <property name="geometry">
            <rect>
             <x>270</x>
@@ -1325,7 +1325,7 @@ padding-right: 10px;</string>
            <bool>true</bool>
           </property>
          </widget>
-         <widget class="QLineEdit" name="lineEdit_5">
+         <widget class="QLineEdit" name="txt_AccountDetailsCity">
           <property name="geometry">
            <rect>
             <x>270</x>
@@ -1402,7 +1402,7 @@ padding-right: 10px;</string>
           </property>
          </widget>
         </widget>
-        <widget class="QLabel" name="lbl_Account_details">
+        <widget class="QLabel" name="lbl_AccountDetails">
          <property name="geometry">
           <rect>
            <x>170</x>
@@ -1420,7 +1420,7 @@ padding-right: 10px;</string>
         </widget>
        </widget>
        <widget class="QWidget" name="pg_Bank">
-        <widget class="QLabel" name="label_8">
+        <widget class="QLabel" name="lbl_BankDetails">
          <property name="geometry">
           <rect>
            <x>170</x>
@@ -1642,7 +1642,7 @@ color: rgb(200, 200, 200);</string>
          </widget>
         </widget>
        </widget>
-       <widget class="QWidget" name="page_4">
+       <widget class="QWidget" name="pg_Address">
         <widget class="QFrame" name="frm_Address">
          <property name="geometry">
           <rect>
@@ -1698,7 +1698,7 @@ color: rgb(200, 200, 200);
            <bool>true</bool>
           </property>
          </widget>
-         <widget class="QLabel" name="lbl_Line_1">
+         <widget class="QLabel" name="lbl_AddressCity">
           <property name="geometry">
            <rect>
             <x>60</x>
@@ -1711,7 +1711,7 @@ color: rgb(200, 200, 200);
            <string>City</string>
           </property>
          </widget>
-         <widget class="QLineEdit" name="txt_line_1">
+         <widget class="QLineEdit" name="txt_AddressCity">
           <property name="geometry">
            <rect>
             <x>270</x>
@@ -1733,7 +1733,7 @@ color: rgb(200, 200, 200);
            <bool>true</bool>
           </property>
          </widget>
-         <widget class="QLineEdit" name="txt_line_2">
+         <widget class="QLineEdit" name="txt_AddressState">
           <property name="geometry">
            <rect>
             <x>270</x>
@@ -1755,7 +1755,7 @@ color: rgb(200, 200, 200);
            <bool>true</bool>
           </property>
          </widget>
-         <widget class="QLabel" name="lbl_Line_2">
+         <widget class="QLabel" name="lbl_AddressState">
           <property name="geometry">
            <rect>
             <x>60</x>
@@ -1816,7 +1816,7 @@ color: rgb(200, 200, 200);
            <string>OK</string>
           </property>
          </widget>
-         <widget class="QLabel" name="label_11">
+         <widget class="QLabel" name="lbl_AdressPincode">
           <property name="geometry">
            <rect>
             <x>60</x>
@@ -1829,7 +1829,7 @@ color: rgb(200, 200, 200);
            <string>Pincode</string>
           </property>
          </widget>
-         <widget class="QLineEdit" name="lineEdit_6">
+         <widget class="QLineEdit" name="lbl_AddressPincode">
           <property name="geometry">
            <rect>
             <x>270</x>
@@ -1845,7 +1845,7 @@ color: rgb(200, 200, 200);
 </string>
           </property>
           <property name="placeholderText">
-           <string>Enter State</string>
+           <string>Pincode/Zipcode</string>
           </property>
           <property name="clearButtonEnabled">
            <bool>true</bool>
