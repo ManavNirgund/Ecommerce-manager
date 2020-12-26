@@ -22,7 +22,7 @@ class SellerGUI(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1619, 900)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("./Resources/Icons/icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        icon.addPixmap(QtGui.QPixmap("../Resources/Icons/icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
         MainWindow.setWindowIcon(icon)
         MainWindow.setStyleSheet("*{background: rgb(69, 69, 69);\n"
 "color: rgb(200, 200, 200);\n"
@@ -74,7 +74,7 @@ class SellerGUI(object):
         self.lbl_SearchbarPic.setGeometry(QtCore.QRect(640, 10, 21, 21))
         self.lbl_SearchbarPic.setStyleSheet("background: #c8c8c8;")
         self.lbl_SearchbarPic.setText("")
-        self.lbl_SearchbarPic.setPixmap(QtGui.QPixmap("./Resources/Icons/Search.png"))
+        self.lbl_SearchbarPic.setPixmap(QtGui.QPixmap("../Resources/Icons/Search.png"))
         self.lbl_SearchbarPic.setObjectName("lbl_SearchbarPic")
         self.txt_SearchBar = QtWidgets.QLineEdit(self.frm_SerachbarHolder)
         self.txt_SearchBar.setGeometry(QtCore.QRect(80, 0, 591, 41))
@@ -106,7 +106,7 @@ class SellerGUI(object):
         self.lbl_NavHomePic.setStyleSheet("background: rgb(243, 76, 83);\n"
 " ")
         self.lbl_NavHomePic.setText("")
-        self.lbl_NavHomePic.setPixmap(QtGui.QPixmap("./Resources/Icons/Home.png"))
+        self.lbl_NavHomePic.setPixmap(QtGui.QPixmap("../Resources/Icons/Home.png"))
         self.lbl_NavHomePic.setObjectName("lbl_NavHomePic")
         self.lbl_NavHome = QtWidgets.QLabel(self.frm_NavHome)
         self.lbl_NavHome.setGeometry(QtCore.QRect(30, 25, 71, 16))
@@ -128,7 +128,7 @@ class SellerGUI(object):
         self.lbl_NavSellPic.setStyleSheet("background: rgb(243, 76, 83);\n"
 " ")
         self.lbl_NavSellPic.setText("")
-        self.lbl_NavSellPic.setPixmap(QtGui.QPixmap("./Resources/Icons/Sell.png"))
+        self.lbl_NavSellPic.setPixmap(QtGui.QPixmap("../Resources/Icons/Sell.png"))
         self.lbl_NavSellPic.setObjectName("lbl_NavSellPic")
         self.lbl_NavSell = QtWidgets.QLabel(self.frm_NavSell)
         self.lbl_NavSell.setGeometry(QtCore.QRect(30, 25, 71, 16))
@@ -144,7 +144,7 @@ class SellerGUI(object):
         self.lbl_NavAccountPic.setStyleSheet("background: rgb(243, 76, 83);\n"
 " ")
         self.lbl_NavAccountPic.setText("")
-        self.lbl_NavAccountPic.setPixmap(QtGui.QPixmap("./Resources/Icons/Accounts.png"))
+        self.lbl_NavAccountPic.setPixmap(QtGui.QPixmap("../Resources/Icons/Accounts.png"))
         self.lbl_NavAccountPic.setObjectName("lbl_NavAccountPic")
         self.lbl_NavAccount = QtWidgets.QLabel(self.frm_NavAccount)
         self.lbl_NavAccount.setGeometry(QtCore.QRect(30, 25, 71, 16))
@@ -671,7 +671,7 @@ class SellerGUI(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(2)
         self.stackedWidget_2.setCurrentIndex(0)
         self.btn_BrowseImage.clicked.connect(self.dspb_Cost.setFocus)
         self.txt_ProductName.returnPressed.connect(self.btn_BrowseImage.setFocus)
