@@ -25,7 +25,7 @@ font-size: 20px;}
 
 QFrame, QWdiget, QPushButton, QComboBox {border: none;}
 
-QLineEdit {
+QLineEdit, QTextEdit, QSpinBox {
 	border: 2px solid rgb(243, 76, 83);
 	border-radius: 20px;
 } </string>
@@ -68,9 +68,9 @@ color: rgb(69, 69, 69);</string>
      <widget class="QFrame" name="frm_SerachbarHolder">
       <property name="geometry">
        <rect>
-        <x>400</x>
+        <x>370</x>
         <y>5</y>
-        <width>671</width>
+        <width>701</width>
         <height>41</height>
        </rect>
       </property>
@@ -83,9 +83,9 @@ color: rgb(69, 69, 69);</string>
       <widget class="QComboBox" name="cmbx_Filter">
        <property name="geometry">
         <rect>
-         <x>11</x>
+         <x>4</x>
          <y>0</y>
-         <width>75</width>
+         <width>161</width>
          <height>41</height>
         </rect>
        </property>
@@ -136,7 +136,7 @@ font-size: 18px;
       <widget class="QLabel" name="lbl_SearchbarPic">
        <property name="geometry">
         <rect>
-         <x>640</x>
+         <x>660</x>
          <y>10</y>
          <width>21</width>
          <height>21</height>
@@ -155,9 +155,9 @@ font-size: 18px;
       <widget class="QLineEdit" name="txt_SearchBar">
        <property name="geometry">
         <rect>
-         <x>80</x>
+         <x>160</x>
          <y>0</y>
-         <width>591</width>
+         <width>531</width>
          <height>41</height>
         </rect>
        </property>
@@ -196,25 +196,6 @@ font-size: 18px;
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QFrame" name="frm_Underline_3">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>42</y>
-         <width>100</width>
-         <height>3</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background: rgb(243, 76, 83);</string>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
-       </property>
-      </widget>
       <widget class="QLabel" name="lbl_NavHomePic">
        <property name="geometry">
         <rect>
@@ -267,25 +248,6 @@ font-size: 18px;
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QFrame" name="frm_Underline_2">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>42</y>
-         <width>100</width>
-         <height>3</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background: rgb(243, 76, 83);</string>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
-       </property>
-      </widget>
       <widget class="QLabel" name="lbl_NavSellPic">
        <property name="geometry">
         <rect>
@@ -371,25 +333,6 @@ font-size: 18px;
         <string>Account</string>
        </property>
       </widget>
-      <widget class="QFrame" name="frm_Underline">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>42</y>
-         <width>100</width>
-         <height>3</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background: rgb(243, 76, 83);</string>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
-       </property>
-      </widget>
      </widget>
      <widget class="QPushButton" name="btn_NavHome">
       <property name="geometry">
@@ -397,14 +340,19 @@ font-size: 18px;
         <x>1190</x>
         <y>0</y>
         <width>120</width>
-        <height>50</height>
+        <height>51</height>
        </rect>
       </property>
       <property name="cursor">
        <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="styleSheet">
-       <string notr="true">#btn_NavHome{background: rgba(0, 0, 0, 0);}
+       <string notr="true">#btn_NavHome {background: rgba(0, 0, 0, 0);}
+
+#btn_NavHome:hover {
+	border-bottom: 5px solid rgb(69, 69, 69);
+	
+}
 </string>
       </property>
       <property name="text">
@@ -417,7 +365,7 @@ font-size: 18px;
         <x>1320</x>
         <y>0</y>
         <width>120</width>
-        <height>50</height>
+        <height>51</height>
        </rect>
       </property>
       <property name="cursor">
@@ -426,8 +374,8 @@ font-size: 18px;
       <property name="styleSheet">
        <string notr="true">#btn_NavSell {background: rgba(0, 0, 0, 0);}
 
-QFrame:hover #frm_Underline{
-	background: rgb(200, 200, 200);	
+#btn_NavSell:hover {
+	border-bottom: 5px solid rgb(69, 69, 69);	
 }</string>
       </property>
       <property name="text">
@@ -440,7 +388,7 @@ QFrame:hover #frm_Underline{
         <x>1450</x>
         <y>0</y>
         <width>120</width>
-        <height>50</height>
+        <height>51</height>
        </rect>
       </property>
       <property name="cursor">
@@ -449,8 +397,8 @@ QFrame:hover #frm_Underline{
       <property name="styleSheet">
        <string notr="true">#btn_NavAccount {background: rgba(0, 0, 0, 0);}
 
-QFrame:hover #frm_Underline{
-	background: rgb(200, 200, 200);	
+#btn_NavAccount:hover {
+	border-bottom: 5px solid rgb(69, 69, 69);	
 }</string>
       </property>
       <property name="text">
@@ -464,7 +412,7 @@ QFrame:hover #frm_Underline{
        <x>0</x>
        <y>60</y>
        <width>1600</width>
-       <height>821</height>
+       <height>831</height>
       </rect>
      </property>
      <property name="focusPolicy">
@@ -480,7 +428,7 @@ QFrame:hover #frm_Underline{
       <enum>QFrame::NoFrame</enum>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="Home">
       <widget class="QFrame" name="frm_Home">
@@ -510,7 +458,7 @@ QFrame:hover #frm_Underline{
         <property name="title">
          <string>Up and Running</string>
         </property>
-        <widget class="QListWidget" name="listWidget">
+        <widget class="QListWidget" name="lst_UpAndRunning">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -519,13 +467,16 @@ QFrame:hover #frm_Underline{
            <height>771</height>
           </rect>
          </property>
+         <property name="cursor" stdset="0">
+          <cursorShape>ArrowCursor</cursorShape>
+         </property>
          <property name="styleSheet">
           <string notr="true"/>
          </property>
         </widget>
        </widget>
       </widget>
-      <widget class="QGroupBox" name="grp_Analytics">
+      <widget class="QGroupBox" name="grp_ProductView">
        <property name="geometry">
         <rect>
          <x>929</x>
@@ -535,8 +486,110 @@ QFrame:hover #frm_Underline{
         </rect>
        </property>
        <property name="title">
-        <string>Analytics</string>
+        <string>Product View</string>
        </property>
+       <widget class="QLabel" name="lbl_ProductViewImage">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>40</y>
+          <width>600</width>
+          <height>321</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>Image</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lbl_ProductViewName">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>440</y>
+          <width>511</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Product Name</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lbl_ProductViewCost">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>510</y>
+          <width>521</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Prodcut Cost</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lbl_ProductViewSeller">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>580</y>
+          <width>511</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Seller</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lbl_2">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>380</y>
+          <width>331</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Brand</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lbl_ProductViewDescription">
+        <property name="geometry">
+         <rect>
+          <x>54</x>
+          <y>640</y>
+          <width>561</width>
+          <height>141</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Product Description</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btn_ProductViewBuy">
+        <property name="geometry">
+         <rect>
+          <x>512</x>
+          <y>380</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius: 20px;
+background: rgb(243, 76, 83);
+</string>
+        </property>
+        <property name="text">
+         <string>Buy</string>
+        </property>
+       </widget>
       </widget>
      </widget>
      <widget class="QWidget" name="Sell">
@@ -544,9 +597,9 @@ QFrame:hover #frm_Underline{
        <property name="geometry">
         <rect>
          <x>90</x>
-         <y>70</y>
-         <width>681</width>
-         <height>741</height>
+         <y>50</y>
+         <width>701</width>
+         <height>761</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -564,7 +617,7 @@ QFrame:hover #frm_Underline{
         <property name="geometry">
          <rect>
           <x>240</x>
-          <y>335</y>
+          <y>305</y>
           <width>200</width>
           <height>35</height>
          </rect>
@@ -586,30 +639,11 @@ QFrame:hover #frm_Underline{
          <string>Browse Image</string>
         </property>
        </widget>
-       <widget class="QLabel" name="lbl_Cost">
+       <widget class="QLabel" name="lbl_SellDescrption">
         <property name="geometry">
          <rect>
           <x>60</x>
-          <y>410</y>
-          <width>100</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="toolTip">
-         <string>Add an Image to Accentuate your product</string>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border: none;</string>
-        </property>
-        <property name="text">
-         <string>Cost</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="lbl_Descrption">
-        <property name="geometry">
-         <rect>
-          <x>60</x>
-          <y>500</y>
+          <y>520</y>
           <width>100</width>
           <height>31</height>
          </rect>
@@ -628,7 +662,7 @@ QFrame:hover #frm_Underline{
         <property name="geometry">
          <rect>
           <x>450</x>
-          <y>650</y>
+          <y>670</y>
           <width>200</width>
           <height>41</height>
          </rect>
@@ -644,7 +678,7 @@ QFrame:hover #frm_Underline{
 }
 
 #btn_AddClear:hover {
-	background: rgb(255, 0, 0) 
+	background: rgb(255, 50, 60) 
 }</string>
         </property>
         <property name="text">
@@ -655,9 +689,9 @@ QFrame:hover #frm_Underline{
         <property name="geometry">
          <rect>
           <x>240</x>
-          <y>470</y>
+          <y>510</y>
           <width>411</width>
-          <height>141</height>
+          <height>131</height>
          </rect>
         </property>
         <property name="cursor" stdset="0">
@@ -673,11 +707,11 @@ padding: 10px;
 </string>
         </property>
        </widget>
-       <widget class="QLabel" name="lbl_ProductImage">
+       <widget class="QLabel" name="lbl_SellProductImage">
         <property name="geometry">
          <rect>
           <x>240</x>
-          <y>130</y>
+          <y>100</y>
           <width>200</width>
           <height>200</height>
          </rect>
@@ -700,7 +734,7 @@ border-radius: 15px;</string>
         <property name="geometry">
          <rect>
           <x>240</x>
-          <y>51</y>
+          <y>31</y>
           <width>400</width>
           <height>41</height>
          </rect>
@@ -712,11 +746,11 @@ padding-left: 10px;
 padding-right: 10px;</string>
         </property>
        </widget>
-       <widget class="QLabel" name="lbl_ProductName">
+       <widget class="QLabel" name="lbl_SellProductName">
         <property name="geometry">
          <rect>
           <x>50</x>
-          <y>50</y>
+          <y>30</y>
           <width>171</width>
           <height>41</height>
          </rect>
@@ -729,7 +763,7 @@ padding-right: 10px;</string>
         <property name="geometry">
          <rect>
           <x>210</x>
-          <y>650</y>
+          <y>670</y>
           <width>200</width>
           <height>41</height>
          </rect>
@@ -745,18 +779,18 @@ padding-right: 10px;</string>
 }
 
 #btn_Sell:hover {
-	background: rgb(255, 0, 0);
+	background: rgb(255, 50, 60);
 }</string>
         </property>
         <property name="text">
          <string>Sell</string>
         </property>
        </widget>
-       <widget class="QLabel" name="lbl_Image">
+       <widget class="QLabel" name="lbl_SellImage">
         <property name="geometry">
          <rect>
           <x>50</x>
-          <y>210</y>
+          <y>180</y>
           <width>100</width>
           <height>31</height>
          </rect>
@@ -771,11 +805,94 @@ padding-right: 10px;</string>
          <string>Image</string>
         </property>
        </widget>
+       <widget class="QComboBox" name="cmbx_Category">
+        <property name="geometry">
+         <rect>
+          <x>240</x>
+          <y>370</y>
+          <width>151</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 2px solid rgb(243, 76, 83);
+border-radius: 6px;</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>Select</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QLabel" name="lbl_Category">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>370</y>
+          <width>141</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Category</string>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox">
+        <property name="geometry">
+         <rect>
+          <x>550</x>
+          <y>440</y>
+          <width>101</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="buttonSymbols">
+         <enum>QAbstractSpinBox::NoButtons</enum>
+        </property>
+        <property name="suffix">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lbl_Quantity">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>440</y>
+          <width>81</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Quantity</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lbl_SellCost">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>450</y>
+          <width>100</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Add an Image to Accentuate your product</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none;</string>
+        </property>
+        <property name="text">
+         <string>Cost</string>
+        </property>
+       </widget>
        <widget class="QDoubleSpinBox" name="dspb_Cost">
         <property name="geometry">
          <rect>
           <x>240</x>
-          <y>400</y>
+          <y>440</y>
           <width>151</width>
           <height>43</height>
          </rect>
@@ -812,8 +929,8 @@ padding: 2px;</string>
        <property name="geometry">
         <rect>
          <x>90</x>
-         <y>20</y>
-         <width>111</width>
+         <y>0</y>
+         <width>151</width>
          <height>41</height>
         </rect>
        </property>
@@ -821,15 +938,15 @@ padding: 2px;</string>
         <string notr="true">color: rgb(240, 240, 240);</string>
        </property>
        <property name="text">
-        <string>Add Product</string>
+        <string>Add/Edit Product</string>
        </property>
       </widget>
       <widget class="QFrame" name="frm_Previrew">
        <property name="geometry">
         <rect>
-         <x>790</x>
+         <x>830</x>
          <y>10</y>
-         <width>781</width>
+         <width>741</width>
          <height>801</height>
         </rect>
        </property>
@@ -846,7 +963,7 @@ padding: 2px;</string>
         <property name="geometry">
          <rect>
           <x>90</x>
-          <y>10</y>
+          <y>0</y>
           <width>91</width>
           <height>41</height>
          </rect>
@@ -861,10 +978,10 @@ padding: 2px;</string>
        <widget class="QFrame" name="frm_Divider">
         <property name="geometry">
          <rect>
-          <x>90</x>
-          <y>60</y>
-          <width>600</width>
-          <height>2</height>
+          <x>50</x>
+          <y>40</y>
+          <width>621</width>
+          <height>20</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -882,10 +999,10 @@ padding: 2px;</string>
        <widget class="QLabel" name="lbl_AfterProductImage">
         <property name="geometry">
          <rect>
-          <x>420</x>
-          <y>120</y>
-          <width>250</width>
-          <height>250</height>
+          <x>69</x>
+          <y>70</y>
+          <width>600</width>
+          <height>321</height>
          </rect>
         </property>
         <property name="cursor">
@@ -895,19 +1012,21 @@ padding: 2px;</string>
          <enum>Qt::TabFocus</enum>
         </property>
         <property name="styleSheet">
-         <string notr="true">border: 2px solid rgb(243, 76, 83);
-border-radius: 15px;</string>
+         <string notr="true"/>
         </property>
         <property name="text">
-         <string/>
+         <string>Image</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLabel" name="lbl_AftreBrand">
         <property name="geometry">
          <rect>
-          <x>430</x>
-          <y>390</y>
-          <width>250</width>
+          <x>80</x>
+          <y>400</y>
+          <width>661</width>
           <height>41</height>
          </rect>
         </property>
@@ -918,9 +1037,9 @@ border-radius: 15px;</string>
        <widget class="QLabel" name="lbl_AfterProductName">
         <property name="geometry">
          <rect>
-          <x>110</x>
-          <y>130</y>
-          <width>271</width>
+          <x>120</x>
+          <y>450</y>
+          <width>621</width>
           <height>41</height>
          </rect>
         </property>
@@ -931,9 +1050,9 @@ border-radius: 15px;</string>
        <widget class="QLabel" name="lbl_AfterSeller">
         <property name="geometry">
          <rect>
-          <x>110</x>
-          <y>310</y>
-          <width>271</width>
+          <x>120</x>
+          <y>560</y>
+          <width>621</width>
           <height>41</height>
          </rect>
         </property>
@@ -944,9 +1063,9 @@ border-radius: 15px;</string>
        <widget class="QLabel" name="lbl_AfterProductCost">
         <property name="geometry">
          <rect>
-          <x>110</x>
-          <y>220</y>
-          <width>271</width>
+          <x>120</x>
+          <y>510</y>
+          <width>621</width>
           <height>41</height>
          </rect>
         </property>
@@ -957,20 +1076,20 @@ border-radius: 15px;</string>
        <widget class="QLabel" name="lbl_AfterProductDescription">
         <property name="geometry">
          <rect>
-          <x>110</x>
-          <y>500</y>
-          <width>511</width>
-          <height>231</height>
+          <x>80</x>
+          <y>620</y>
+          <width>661</width>
+          <height>191</height>
          </rect>
         </property>
         <property name="styleSheet">
          <string notr="true"/>
         </property>
         <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;/\&lt;/p&gt;&lt;p&gt;|&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;&amp;lt;----------------------Product Description----------------------&amp;gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;|&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;\/&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Product Description&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
         </property>
        </widget>
       </widget>
@@ -1033,7 +1152,6 @@ border-radius: 15px;</string>
           <string notr="true">#btn_AccountDetails:hover {
 	border: none;
 	color: rgb(255, 255, 255);   
-	font-size: 22px; 
  }</string>
          </property>
          <property name="text">
@@ -1058,8 +1176,7 @@ border-radius: 15px;</string>
          <property name="styleSheet">
           <string notr="true">#btn_BankDetails:hover {
 	border: none;
-	color: rgb(255, 255, 255);
-	font-size: 22px;      
+	color: rgb(255, 255, 255);      
  }</string>
          </property>
          <property name="text">
@@ -1084,8 +1201,7 @@ border-radius: 15px;</string>
          <property name="styleSheet">
           <string notr="true">#btn_Address:hover {
 	border: none;
-	color: rgb(255, 255, 255);
-	font-size: 22px;     
+	color: rgb(255, 255, 255);     
  }</string>
          </property>
          <property name="text">
@@ -1120,7 +1236,7 @@ border-radius: 15px;</string>
         </rect>
        </property>
        <property name="currentIndex">
-        <number>2</number>
+        <number>1</number>
        </property>
        <widget class="QWidget" name="pg_Account">
         <widget class="QFrame" name="frm_ProfileDetails">
@@ -1242,7 +1358,7 @@ border-radius: 20px;</string>
            </rect>
           </property>
           <property name="text">
-           <string>City</string>
+           <string>Address</string>
           </property>
          </widget>
          <widget class="QLineEdit" name="txt_AccountDetailsName">
@@ -1325,26 +1441,6 @@ padding-right: 10px;</string>
            <bool>true</bool>
           </property>
          </widget>
-         <widget class="QLineEdit" name="txt_AccountDetailsCity">
-          <property name="geometry">
-           <rect>
-            <x>270</x>
-            <y>560</y>
-            <width>400</width>
-            <height>41</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">padding-left: 10px;
-padding-right: 10px;</string>
-          </property>
-          <property name="placeholderText">
-           <string>City Name</string>
-          </property>
-          <property name="clearButtonEnabled">
-           <bool>true</bool>
-          </property>
-         </widget>
          <widget class="QPushButton" name="btn_AccountOK">
           <property name="geometry">
            <rect>
@@ -1359,13 +1455,12 @@ padding-right: 10px;</string>
           </property>
           <property name="styleSheet">
            <string notr="true">#btn_AccountOK {
-	border-right: 1px solid rgb(243, 76, 83);
 	border-radius: 10px;
 	background: rgb(243, 76, 83);
 }
 
 #btn_AccountOK:hover {
-	background: rgb(255, 0, 0);
+	background: rgb(255, 50, 60);
 }</string>
           </property>
           <property name="text">
@@ -1381,6 +1476,9 @@ padding-right: 10px;</string>
             <height>41</height>
            </rect>
           </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
           <property name="focusPolicy">
            <enum>Qt::NoFocus</enum>
           </property>
@@ -1392,13 +1490,21 @@ padding-right: 10px;</string>
 }
 
 #btn_AccountClear:hover  {
-	border-left: 1px solid rgb(243, 76, 83);
-	border-radius: 10px;
-	background: rgb(255, 0, 0);
+	background: rgb(255, 60, 70);
 }</string>
           </property>
           <property name="text">
            <string>Clear</string>
+          </property>
+         </widget>
+         <widget class="QTextEdit" name="textEdit">
+          <property name="geometry">
+           <rect>
+            <x>270</x>
+            <y>530</y>
+            <width>391</width>
+            <height>87</height>
+           </rect>
           </property>
          </widget>
         </widget>
@@ -1486,7 +1592,7 @@ padding-right: 10px;</string>
           <property name="geometry">
            <rect>
             <x>50</x>
-            <y>280</y>
+            <y>290</y>
             <width>151</width>
             <height>41</height>
            </rect>
@@ -1499,7 +1605,7 @@ padding-right: 10px;</string>
           <property name="geometry">
            <rect>
             <x>50</x>
-            <y>390</y>
+            <y>410</y>
             <width>131</width>
             <height>41</height>
            </rect>
@@ -1533,8 +1639,8 @@ color: rgb(200, 200, 200);</string>
           <property name="geometry">
            <rect>
             <x>270</x>
-            <y>280</y>
-            <width>391</width>
+            <y>290</y>
+            <width>400</width>
             <height>41</height>
            </rect>
           </property>
@@ -1544,7 +1650,7 @@ padding-right: 10px;
 color: rgb(200, 200, 200);</string>
           </property>
           <property name="placeholderText">
-           <string>Official Account No.</string>
+           <string>Account No.</string>
           </property>
           <property name="clearButtonEnabled">
            <bool>true</bool>
@@ -1554,8 +1660,8 @@ color: rgb(200, 200, 200);</string>
           <property name="geometry">
            <rect>
             <x>270</x>
-            <y>390</y>
-            <width>381</width>
+            <y>410</y>
+            <width>400</width>
             <height>41</height>
            </rect>
           </property>
@@ -1565,7 +1671,7 @@ padding-right: 10px;
 color: rgb(200, 200, 200);</string>
           </property>
           <property name="placeholderText">
-           <string>Official IFSC Code</string>
+           <string>IFSC Code</string>
           </property>
           <property name="clearButtonEnabled">
            <bool>true</bool>
@@ -1580,6 +1686,9 @@ color: rgb(200, 200, 200);</string>
             <height>41</height>
            </rect>
           </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
           <property name="styleSheet">
            <string notr="true">#btn_BankClear {
 	border-left: 1px solid rgb(243, 76, 83);
@@ -1588,7 +1697,7 @@ color: rgb(200, 200, 200);</string>
 }
 
 #btn_BankClear:hover {
-	background: rgb(255, 0, 0);
+	background: rgb(255,50, 60);
 }</string>
           </property>
           <property name="text">
@@ -1604,6 +1713,9 @@ color: rgb(200, 200, 200);</string>
             <height>41</height>
            </rect>
           </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
           <property name="styleSheet">
            <string notr="true">#btn_BankOK {
 	border-right: 1px solid rgb(243, 76, 83);
@@ -1612,7 +1724,7 @@ color: rgb(200, 200, 200);</string>
 }
 
 #btn_BankOK:hover {
-	background: rgb(255, 0, 0);
+	background: rgb(255, 50, 60);
 }</string>
           </property>
           <property name="text">
@@ -1679,9 +1791,9 @@ color: rgb(200, 200, 200);</string>
          <widget class="QLineEdit" name="txt_HouseNumber">
           <property name="geometry">
            <rect>
-            <x>270</x>
+            <x>209</x>
             <y>50</y>
-            <width>400</width>
+            <width>461</width>
             <height>41</height>
            </rect>
           </property>
@@ -1714,9 +1826,9 @@ color: rgb(200, 200, 200);
          <widget class="QLineEdit" name="txt_AddressCity">
           <property name="geometry">
            <rect>
-            <x>270</x>
+            <x>209</x>
             <y>170</y>
-            <width>400</width>
+            <width>461</width>
             <height>41</height>
            </rect>
           </property>
@@ -1736,9 +1848,9 @@ color: rgb(200, 200, 200);
          <widget class="QLineEdit" name="txt_AddressState">
           <property name="geometry">
            <rect>
-            <x>270</x>
+            <x>209</x>
             <y>290</y>
-            <width>400</width>
+            <width>461</width>
             <height>41</height>
            </rect>
           </property>
@@ -1777,6 +1889,9 @@ color: rgb(200, 200, 200);
             <height>41</height>
            </rect>
           </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
           <property name="styleSheet">
            <string notr="true">#btn_AddressClear {
 	border-left: 1px solid rgb(243, 76, 83);
@@ -1785,7 +1900,7 @@ color: rgb(200, 200, 200);
 }
 
 #btn_AddressClear:hover {
-	background: rgb(255, 0, 0);
+	background: rgb(255, 56, 60);
 }</string>
           </property>
           <property name="text">
@@ -1801,6 +1916,9 @@ color: rgb(200, 200, 200);
             <height>41</height>
            </rect>
           </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
           <property name="styleSheet">
            <string notr="true">#btn_AddressOK {
 	border-right: 1px solid rgb(243, 76, 83);
@@ -1809,7 +1927,7 @@ color: rgb(200, 200, 200);
 }
 
 #btn_AddressOK:hover {
-	background: rgb(255, 0, 0);
+	background: rgb(255, 50, 60);
 }</string>
           </property>
           <property name="text">
@@ -1832,9 +1950,9 @@ color: rgb(200, 200, 200);
          <widget class="QLineEdit" name="lbl_AddressPincode">
           <property name="geometry">
            <rect>
-            <x>270</x>
+            <x>209</x>
             <y>400</y>
-            <width>400</width>
+            <width>461</width>
             <height>41</height>
            </rect>
           </property>
